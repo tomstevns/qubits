@@ -53,7 +53,7 @@ align more closely with the structure of nature itself.
 
 ## Files
 
-- `whitepaper.pdf`  
+- `whitepaper_v1_1.pdf`  
   Full research description, including conceptual motivation,  
   system architecture, and discussion of limitations.
 
