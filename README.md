@@ -45,6 +45,23 @@ The whitepaper proposes an AI-assisted pipeline with five major components:
    contemporary physical platforms (ion traps, superconducting devices,  
    photonic systems, cold atoms, etc.).
 
+6. Recent Additions (v0.1b–v0.3 Prototypes)
+   A small numerical prototype has been added exploring whether
+   near-degenerate eigenstructures can be detected directly from
+   randomly generated Hamiltonians.
+   The prototype:
+   
+   constructs sparse Pauli-operator Hamiltonians
+   performs exact diagonalization (2–8 qubits)
+   identifies degenerate and near-degenerate eigenpairs
+   extracts dominant computational-basis components
+   groups the results into candidate subspaces
+   These experiments function as an initial proof of concept for
+   the idea that physics-native information units may arise as
+   eigenvector-structured subspaces of the Hamiltonian itself.
+   
+   Further extensions will appear in upcoming versions.
+
 The goal is not to define a single “new qubit”, but to explore the broader  
 space of physics-native information encodings that may reduce overhead and  
 align more closely with the structure of nature itself.
