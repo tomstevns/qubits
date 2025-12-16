@@ -1,0 +1,56 @@
+=== v0_6_sensitivity: Systematic Signature Detection ===
+Qubits: 3
+Seeds scanned: 500
+Pauli terms per H: 5
+Near-degeneracy epsilon: 0.01
+Dominant threshold: 0.15
+Dynamics: TIME_STEPS=20, DT=0.2, total_time=4.0
+Leakage bins: [0.0, 0.01, 0.05, 0.1, 0.2, 0.4, 0.6, 0.8, 1.01]
+
+=== Accounting ===
+Total near-degenerate pairs found: 937
+Total candidates considered (non-empty dominant sets): 930
+Trivial full-space candidates skipped (dominant_basis_count == 8): 280
+Candidates retained for signature counting: 650
+
+=== Leakage (raw) summary across retained candidates ===
+{'n': 650, 'min': 0.0, 'p10': 0.027328715094764977, 'p50': 0.23775063695183263, 'p90': 0.513031739527983, 'max': 0.9773856746529632, 'mean': 0.25626096189897574}
+
+=== Leakage (raw) summary by dominant_basis_count ===
+dominant_basis_count=2 -> {'n': 30, 'min': 0.028370025322346004, 'p10': 0.06298805149896869, 'p50': 0.26373439506470286, 'p90': 0.5269300381731066, 'max': 0.9773856746529632, 'mean': 0.2812218335120315}
+dominant_basis_count=3 -> {'n': 1, 'min': 0.21572867139621787, 'p10': 0.21572867139621787, 'p50': 0.21572867139621787, 'p90': 0.21572867139621787, 'max': 0.21572867139621787, 'mean': 0.21572867139621787}
+dominant_basis_count=4 -> {'n': 428, 'min': 0.0, 'p10': 0.008789760060350149, 'p50': 0.2482691705563559, 'p90': 0.5608419136854113, 'max': 0.9248923783008876, 'mean': 0.26690438586012283}
+dominant_basis_count=5 -> {'n': 38, 'min': 0.03953581698012254, 'p10': 0.07433356731806673, 'p50': 0.20126879693430944, 'p90': 0.433356315917683, 'max': 0.5816899082858324, 'mean': 0.23380223161395652}
+dominant_basis_count=6 -> {'n': 142, 'min': 0.0073446496216234, 'p10': 0.05796444370300813, 'p50': 0.2121646983770793, 'p90': 0.4725082417135835, 'max': 0.6481832405258879, 'mean': 0.2297967815757864}
+dominant_basis_count=7 -> {'n': 11, 'min': 0.006396627265074284, 'p10': 0.0553655502265219, 'p50': 0.2120844946701037, 'p90': 0.38679499573500986, 'max': 0.38679499573500986, 'mean': 0.1969578749411318}
+
+=== Signature Summary (Top 25) ===
+Format: (dominant_basis_count, entropy_i, entropy_j, leakage_bin) -> occurrences
+
+(4, 1.0, 1.0, '0-0.01')  ->  occurrences: 7
+(4, 2.31, 2.31, '0.2-0.4')  ->  occurrences: 4
+(4, 2.6, 2.6, '0.4-0.6')  ->  occurrences: 4
+(4, 2.62, 2.62, '0.8-1.01')  ->  occurrences: 4
+(4, 1.5, 1.5, '0-0.01')  ->  occurrences: 4
+(4, 1.42, 1.42, '0.1-0.2')  ->  occurrences: 4
+(4, 1.78, 1.78, '0.4-0.6')  ->  occurrences: 4
+(4, 1.75, 1.75, '0.1-0.2')  ->  occurrences: 4
+(4, 1.75, 1.75, '0.4-0.6')  ->  occurrences: 3
+(6, 2.67, 2.67, '0.1-0.2')  ->  occurrences: 3
+(4, 1.87, 1.87, '0.2-0.4')  ->  occurrences: 3
+(4, 2.0, 2.0, '0.2-0.4')  ->  occurrences: 3
+(4, 1.76, 1.76, '0.2-0.4')  ->  occurrences: 3
+(4, 1.91, 1.91, '0.2-0.4')  ->  occurrences: 3
+(6, 2.58, 2.58, '0.2-0.4')  ->  occurrences: 3
+(4, 2.38, 2.38, '0.2-0.4')  ->  occurrences: 3
+(4, 2.34, 2.34, '0.2-0.4')  ->  occurrences: 3
+(4, 1.38, 1.38, '0.1-0.2')  ->  occurrences: 3
+(4, 1.1, 1.1, '0.01-0.05')  ->  occurrences: 3
+(4, 1.5, 1.5, '0.1-0.2')  ->  occurrences: 3
+(4, 2.16, 2.16, '0.4-0.6')  ->  occurrences: 3
+(4, 2.23, 2.23, '0.05-0.1')  ->  occurrences: 3
+(6, 2.68, 2.68, '0.2-0.4')  ->  occurrences: 3
+(4, 1.52, 1.52, '0-0.01')  ->  occurrences: 3
+(4, 1.69, 1.69, '0.4-0.6')  ->  occurrences: 3
+
+=== End of v0_6_sensitivity ===

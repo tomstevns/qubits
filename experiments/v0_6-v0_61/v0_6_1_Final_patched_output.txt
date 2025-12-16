@@ -1,0 +1,159 @@
+=== v0_6.1_Final_patched: Evidence Hygiene for Signature Families ===
+Qubits: 3 (d=8) | terms=5 | seeds=50000 | t=1.0
+Nominal discovery: prob_threshold=0.25, epsilon=0.05, ent_bin(fine)=0.10, leak_bin(fine)=0.05
+Patch layer: family_ent_step=0.10, family_leak_step=0.05, min_support=50, topK=50
+
+=== 1) Robustness Sweep (family-based) ===
+Using first 5000 seeds for sweep (speed). Full run used for enrichment + hold-out.
+
+[Sweep] th=0.20, eps=0.02, ent_bin=0.05 -> candidates=8072 | stable=405
+  fam=(4, 8, 8, 0)  enrichment=19.93x  stable_rate=1.000  stable=22  overall=22
+  fam=(4, 9, 9, 0)  enrichment=19.93x  stable_rate=1.000  stable=12  overall=12
+  fam=(4, 10, 10, 0)  enrichment=17.16x  stable_rate=0.861  stable=99  overall=115
+
+[Sweep] th=0.20, eps=0.02, ent_bin=0.10 -> candidates=8072 | stable=405
+  fam=(4, 9, 9, 0)  enrichment=19.93x  stable_rate=1.000  stable=27  overall=27
+  fam=(4, 8, 8, 0)  enrichment=19.93x  stable_rate=1.000  stable=18  overall=18
+  fam=(4, 15, 15, 0)  enrichment=17.78x  stable_rate=0.892  stable=58  overall=65
+
+[Sweep] th=0.20, eps=0.05, ent_bin=0.05 -> candidates=8630 | stable=432
+  fam=(4, 9, 9, 0)  enrichment=18.31x  stable_rate=0.917  stable=11  overall=12
+  fam=(4, 8, 8, 0)  enrichment=17.48x  stable_rate=0.875  stable=21  overall=24
+  fam=(4, 13, 13, 0)  enrichment=16.23x  stable_rate=0.812  stable=13  overall=16
+
+[Sweep] th=0.20, eps=0.05, ent_bin=0.10 -> candidates=8630 | stable=432
+  fam=(4, 9, 9, 0)  enrichment=19.24x  stable_rate=0.963  stable=26  overall=27
+  fam=(4, 15, 15, 0)  enrichment=17.29x  stable_rate=0.866  stable=58  overall=67
+  fam=(4, 10, 10, 0)  enrichment=16.80x  stable_rate=0.841  stable=74  overall=88
+
+[Sweep] th=0.20, eps=0.10, ent_bin=0.05 -> candidates=9461 | stable=475
+  fam=(4, 9, 9, 0)  enrichment=18.39x  stable_rate=0.923  stable=12  overall=13
+  fam=(4, 8, 8, 0)  enrichment=17.43x  stable_rate=0.875  stable=21  overall=24
+  fam=(4, 10, 10, 0)  enrichment=15.51x  stable_rate=0.779  stable=95  overall=122
+
+[Sweep] th=0.20, eps=0.10, ent_bin=0.10 -> candidates=9461 | stable=475
+  fam=(4, 9, 9, 0)  enrichment=19.21x  stable_rate=0.964  stable=27  overall=28
+  fam=(4, 10, 10, 0)  enrichment=16.71x  stable_rate=0.839  stable=78  overall=93
+  fam=(4, 8, 8, 0)  enrichment=16.60x  stable_rate=0.833  stable=15  overall=18
+
+[Sweep] th=0.25, eps=0.02, ent_bin=0.05 -> candidates=7292 | stable=366
+  fam=(4, 19, 19, 0)  enrichment=17.93x  stable_rate=0.900  stable=9  overall=10
+  fam=(4, 10, 10, 0)  enrichment=17.05x  stable_rate=0.856  stable=95  overall=111
+  fam=(4, 15, 15, 0)  enrichment=16.16x  stable_rate=0.811  stable=43  overall=53
+
+[Sweep] th=0.25, eps=0.02, ent_bin=0.10 -> candidates=7292 | stable=366
+  fam=(4, 9, 9, 0)  enrichment=19.92x  stable_rate=1.000  stable=23  overall=23
+  fam=(4, 15, 15, 0)  enrichment=17.74x  stable_rate=0.891  stable=57  overall=64
+  fam=(4, 10, 10, 0)  enrichment=17.58x  stable_rate=0.882  stable=75  overall=85
+
+[Sweep] th=0.25, eps=0.05, ent_bin=0.05 -> candidates=7689 | stable=385
+  fam=(4, 10, 10, 0)  enrichment=16.55x  stable_rate=0.829  stable=92  overall=111
+  fam=(4, 13, 13, 0)  enrichment=15.69x  stable_rate=0.786  stable=11  overall=14
+  fam=(4, 15, 15, 0)  enrichment=15.61x  stable_rate=0.782  stable=43  overall=55
+
+[Sweep] th=0.25, eps=0.05, ent_bin=0.10 -> candidates=7689 | stable=385
+  fam=(4, 9, 9, 0)  enrichment=19.97x  stable_rate=1.000  stable=23  overall=23
+  fam=(4, 15, 15, 0)  enrichment=17.25x  stable_rate=0.864  stable=57  overall=66
+  fam=(4, 10, 10, 0)  enrichment=17.15x  stable_rate=0.859  stable=73  overall=85
+
+[Sweep] th=0.25, eps=0.10, ent_bin=0.05 -> candidates=8243 | stable=413
+  fam=(4, 10, 10, 0)  enrichment=15.90x  stable_rate=0.797  stable=94  overall=118
+  fam=(4, 16, 16, 0)  enrichment=14.52x  stable_rate=0.727  stable=40  overall=55
+  fam=(4, 17, 17, 0)  enrichment=13.97x  stable_rate=0.700  stable=7  overall=10
+
+[Sweep] th=0.25, eps=0.10, ent_bin=0.10 -> candidates=8243 | stable=413
+  fam=(4, 9, 9, 0)  enrichment=19.96x  stable_rate=1.000  stable=24  overall=24
+  fam=(4, 10, 10, 0)  enrichment=17.08x  stable_rate=0.856  stable=77  overall=90
+  fam=(4, 15, 15, 0)  enrichment=15.62x  stable_rate=0.783  stable=54  overall=69
+
+[Sweep] th=0.30, eps=0.02, ent_bin=0.05 -> candidates=5160 | stable=259
+  fam=(4, 10, 10, 0)  enrichment=16.42x  stable_rate=0.824  stable=89  overall=108
+  fam=(4, 15, 15, 0)  enrichment=13.28x  stable_rate=0.667  stable=24  overall=36
+  fam=(4, 16, 16, 0)  enrichment=13.09x  stable_rate=0.657  stable=23  overall=35
+
+[Sweep] th=0.30, eps=0.02, ent_bin=0.10 -> candidates=5160 | stable=259
+  fam=(4, 9, 9, 0)  enrichment=19.92x  stable_rate=1.000  stable=18  overall=18
+  fam=(4, 10, 10, 0)  enrichment=17.08x  stable_rate=0.857  stable=72  overall=84
+  fam=(4, 15, 15, 0)  enrichment=15.06x  stable_rate=0.756  stable=31  overall=41
+
+[Sweep] th=0.30, eps=0.05, ent_bin=0.05 -> candidates=5453 | stable=273
+  fam=(4, 10, 10, 0)  enrichment=15.72x  stable_rate=0.787  stable=85  overall=108
+  fam=(4, 19, 19, 0)  enrichment=13.98x  stable_rate=0.700  stable=7  overall=10
+  fam=(4, 16, 16, 0)  enrichment=13.64x  stable_rate=0.683  stable=28  overall=41
+
+[Sweep] th=0.30, eps=0.05, ent_bin=0.10 -> candidates=5453 | stable=273
+  fam=(4, 9, 9, 0)  enrichment=19.97x  stable_rate=1.000  stable=18  overall=18
+  fam=(4, 10, 10, 0)  enrichment=17.12x  stable_rate=0.857  stable=72  overall=84
+  fam=(4, 13, 13, 0)  enrichment=13.55x  stable_rate=0.679  stable=19  overall=28
+
+[Sweep] th=0.30, eps=0.10, ent_bin=0.05 -> candidates=5868 | stable=294
+  fam=(4, 19, 19, 0)  enrichment=14.97x  stable_rate=0.750  stable=9  overall=12
+  fam=(4, 10, 10, 0)  enrichment=14.93x  stable_rate=0.748  stable=86  overall=115
+  fam=(4, 16, 16, 0)  enrichment=14.19x  stable_rate=0.711  stable=32  overall=45
+
+[Sweep] th=0.30, eps=0.10, ent_bin=0.10 -> candidates=5868 | stable=294
+  fam=(4, 9, 9, 0)  enrichment=19.96x  stable_rate=1.000  stable=19  overall=19
+  fam=(4, 10, 10, 0)  enrichment=15.92x  stable_rate=0.798  stable=71  overall=89
+  fam=(4, 15, 15, 0)  enrichment=13.45x  stable_rate=0.674  stable=31  overall=46
+
+Robustness summary (family top-10 sets):
+  Avg pairwise Jaccard overlap: 0.684
+
+=== 2) Enrichment Test (family-based, nominal) + Bootstrap CI ===
+Nominal run: th=0.25, eps=0.05, ent_bin(fine)=0.10
+
+Nominal basic stats:
+Retained candidates: 78011
+Score: mean=0.321, median=0.196, max=1.000
+Leakage_raw: mean=0.456, median=0.451, min=0.000
+dom_count distribution:
+  dom_count=1: 3.8% (n=2971)
+  dom_count=2: 28.7% (n=22389)
+  dom_count=3: 2.0% (n=1546)
+  dom_count=4: 64.9% (n=50649)
+  dom_count=5: 0.2% (n=121)
+  dom_count=6: 0.4% (n=289)
+  dom_count=7: 0.1% (n=46)
+
+Stable set = top 1% by score
+  fam=(4, 9, 9, 0)  point=33.19x  stable_rate=0.371  stable=65  overall=175  |  bootstrap=33.31x, 95% CI [26.93, 39.40]
+  fam=(4, 15, 15, 0)  point=20.49x  stable_rate=0.229  stable=116  overall=506  |  bootstrap=20.48x, 95% CI [17.60, 23.53]
+  fam=(4, 10, 10, 0)  point=18.88x  stable_rate=0.211  stable=176  overall=833  |  bootstrap=18.83x, 95% CI [16.45, 21.42]
+  fam=(4, 20, 20, 0)  point=18.64x  stable_rate=0.209  stable=78  overall=374  |  bootstrap=18.48x, 95% CI [14.63, 22.14]
+  fam=(4, 13, 13, 0)  point=15.41x  stable_rate=0.172  stable=60  overall=348  |  bootstrap=15.51x, 95% CI [12.44, 18.96]
+
+Stable set = top 5% by score
+  fam=(4, 9, 9, 0)  point=19.08x  stable_rate=0.954  stable=167  overall=175  |  bootstrap=19.10x, 95% CI [18.49, 19.63]
+  fam=(4, 10, 10, 0)  point=18.17x  stable_rate=0.909  stable=757  overall=833  |  bootstrap=18.19x, 95% CI [17.81, 18.58]
+  fam=(4, 15, 15, 0)  point=16.72x  stable_rate=0.836  stable=423  overall=506  |  bootstrap=16.67x, 95% CI [15.98, 17.35]
+  fam=(4, 14, 14, 0)  point=15.46x  stable_rate=0.773  stable=245  overall=317  |  bootstrap=15.24x, 95% CI [13.94, 16.20]
+  fam=(4, 20, 20, 0)  point=14.44x  stable_rate=0.722  stable=270  overall=374  |  bootstrap=14.35x, 95% CI [13.43, 15.27]
+
+=== 3) Hold-out Replication (family-based, nominal) ===
+Half A seeds=25000 | Half B seeds=25000 | topK=50
+
+Hold-out overlap on supported family keys: Jaccard=0.695 (inter=41, union=59)
+Top overlapping families (up to 20):
+  fam=(2, 25, 25, 20)
+  fam=(2, 24, 24, 19)
+  fam=(4, 18, 18, 0)
+  fam=(4, 21, 21, 10)
+  fam=(4, 20, 20, 5)
+  fam=(4, 18, 18, 9)
+  fam=(2, 26, 26, 19)
+  fam=(4, 20, 20, 8)
+  fam=(4, 12, 12, 0)
+  fam=(4, 20, 20, 11)
+  fam=(4, 16, 16, 0)
+  fam=(4, 19, 19, 7)
+  fam=(2, 25, 25, 19)
+  fam=(4, 22, 22, 10)
+  fam=(4, 19, 19, 10)
+  fam=(2, 25, 25, 16)
+  fam=(4, 10, 10, 0)
+  fam=(2, 24, 24, 18)
+  fam=(4, 17, 17, 0)
+  fam=(4, 14, 14, 0)
+
+=== End of v0_6.1_Final_patched ===
+Log written to: C:\Users\tomst\PycharmProjects\qubits_1\v0_6_1_Final_patched_output.txt

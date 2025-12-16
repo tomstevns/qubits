@@ -1,0 +1,148 @@
+=== v0_6.1_Final: Evidence Checks for Systematic Signature Families ===
+Qubits: 3 (d=8) | terms=5 | seeds=50000 | t=1.0
+
+=== 1) Robustness Sweep ===
+Using first 5000 seeds for sweep (speed). Full run used for enrichment + hold-out.
+
+[Sweep] th=0.20, eps=0.02, ent_bin=0.05 -> candidates=8072
+  sig=(4, 17, 17, 0)  enrichment=19.93x  stable=6  overall=6
+  sig=(4, 18, 18, 0)  enrichment=19.93x  stable=12  overall=12
+  sig=(4, 16, 16, 0)  enrichment=19.93x  stable=12  overall=12
+
+[Sweep] th=0.20, eps=0.02, ent_bin=0.10 -> candidates=8072
+  sig=(4, 8, 8, 0)  enrichment=19.93x  stable=18  overall=18
+  sig=(4, 9, 9, 0)  enrichment=19.93x  stable=27  overall=27
+  sig=(4, 15, 17, 0)  enrichment=19.93x  stable=3  overall=3
+
+[Sweep] th=0.20, eps=0.05, ent_bin=0.05 -> candidates=8630
+  sig=(4, 17, 17, 0)  enrichment=19.98x  stable=6  overall=6
+  sig=(4, 33, 38, 0)  enrichment=19.98x  stable=1  overall=1
+  sig=(4, 32, 34, 0)  enrichment=19.98x  stable=1  overall=1
+
+[Sweep] th=0.20, eps=0.05, ent_bin=0.10 -> candidates=8630
+  sig=(4, 16, 19, 0)  enrichment=19.98x  stable=1  overall=1
+  sig=(4, 15, 16, 0)  enrichment=19.98x  stable=4  overall=4
+  sig=(4, 16, 18, 0)  enrichment=19.98x  stable=1  overall=1
+
+[Sweep] th=0.20, eps=0.10, ent_bin=0.05 -> candidates=9461
+  sig=(4, 29, 38, 0)  enrichment=19.92x  stable=1  overall=1
+  sig=(4, 17, 17, 0)  enrichment=19.92x  stable=6  overall=6
+  sig=(4, 22, 39, 0)  enrichment=19.92x  stable=1  overall=1
+
+[Sweep] th=0.20, eps=0.10, ent_bin=0.10 -> candidates=9461
+  sig=(4, 15, 19, 0)  enrichment=19.92x  stable=1  overall=1
+  sig=(4, 11, 20, 0)  enrichment=19.92x  stable=1  overall=1
+  sig=(4, 16, 19, 0)  enrichment=19.92x  stable=1  overall=1
+
+[Sweep] th=0.25, eps=0.02, ent_bin=0.05 -> candidates=7292
+  sig=(4, 30, 31, 0)  enrichment=19.92x  stable=7  overall=7
+  sig=(4, 33, 38, 0)  enrichment=19.92x  stable=1  overall=1
+  sig=(4, 32, 34, 0)  enrichment=19.92x  stable=1  overall=1
+
+[Sweep] th=0.25, eps=0.02, ent_bin=0.10 -> candidates=7292
+  sig=(4, 16, 17, 0)  enrichment=19.92x  stable=3  overall=3
+  sig=(4, 15, 17, 0)  enrichment=19.92x  stable=3  overall=3
+  sig=(4, 10, 14, 0)  enrichment=19.92x  stable=6  overall=6
+
+[Sweep] th=0.25, eps=0.05, ent_bin=0.05 -> candidates=7689
+  sig=(4, 44, 44, 0)  enrichment=19.97x  stable=5  overall=5
+  sig=(4, 30, 31, 0)  enrichment=19.97x  stable=7  overall=7
+  sig=(4, 34, 36, 0)  enrichment=19.97x  stable=3  overall=3
+
+[Sweep] th=0.25, eps=0.05, ent_bin=0.10 -> candidates=7689
+  sig=(4, 9, 9, 0)  enrichment=19.97x  stable=23  overall=23
+  sig=(4, 17, 18, 0)  enrichment=19.97x  stable=7  overall=7
+  sig=(4, 15, 17, 0)  enrichment=19.97x  stable=3  overall=3
+
+[Sweep] th=0.25, eps=0.10, ent_bin=0.05 -> candidates=8243
+  sig=(4, 29, 38, 0)  enrichment=19.96x  stable=1  overall=1
+  sig=(4, 22, 39, 0)  enrichment=19.96x  stable=1  overall=1
+  sig=(4, 33, 38, 0)  enrichment=19.96x  stable=1  overall=1
+
+[Sweep] th=0.25, eps=0.10, ent_bin=0.10 -> candidates=8243
+  sig=(4, 15, 19, 0)  enrichment=19.96x  stable=1  overall=1
+  sig=(4, 11, 20, 0)  enrichment=19.96x  stable=1  overall=1
+  sig=(4, 16, 19, 0)  enrichment=19.96x  stable=1  overall=1
+
+[Sweep] th=0.30, eps=0.02, ent_bin=0.05 -> candidates=5160
+  sig=(4, 33, 38, 0)  enrichment=19.92x  stable=1  overall=1
+  sig=(4, 30, 31, 0)  enrichment=19.92x  stable=5  overall=5
+  sig=(4, 18, 18, 0)  enrichment=19.92x  stable=7  overall=7
+
+[Sweep] th=0.30, eps=0.02, ent_bin=0.10 -> candidates=5160
+  sig=(4, 16, 19, 0)  enrichment=19.92x  stable=1  overall=1
+  sig=(4, 15, 16, 0)  enrichment=19.92x  stable=4  overall=4
+  sig=(4, 9, 9, 0)  enrichment=19.92x  stable=18  overall=18
+
+[Sweep] th=0.30, eps=0.05, ent_bin=0.05 -> candidates=5453
+  sig=(4, 33, 38, 0)  enrichment=19.97x  stable=1  overall=1
+  sig=(4, 30, 31, 0)  enrichment=19.97x  stable=5  overall=5
+  sig=(4, 18, 18, 0)  enrichment=19.97x  stable=7  overall=7
+
+[Sweep] th=0.30, eps=0.05, ent_bin=0.10 -> candidates=5453
+  sig=(4, 16, 19, 0)  enrichment=19.97x  stable=1  overall=1
+  sig=(4, 15, 16, 0)  enrichment=19.97x  stable=4  overall=4
+  sig=(4, 9, 9, 0)  enrichment=19.97x  stable=18  overall=18
+
+[Sweep] th=0.30, eps=0.10, ent_bin=0.05 -> candidates=5868
+  sig=(4, 30, 31, 0)  enrichment=19.96x  stable=5  overall=5
+  sig=(4, 29, 38, 0)  enrichment=19.96x  stable=1  overall=1
+  sig=(4, 33, 38, 0)  enrichment=19.96x  stable=1  overall=1
+
+[Sweep] th=0.30, eps=0.10, ent_bin=0.10 -> candidates=5868
+  sig=(4, 9, 9, 0)  enrichment=19.96x  stable=19  overall=19
+  sig=(4, 15, 19, 0)  enrichment=19.96x  stable=1  overall=1
+  sig=(4, 16, 19, 0)  enrichment=19.96x  stable=1  overall=1
+
+Robustness summary (top-10 sets):
+  Avg pairwise Jaccard overlap: 0.162
+  Most frequent signatures in sweep top-10 (top 10):
+    sig=(4, 33, 38, 0)  appears_in=9 runs
+    sig=(4, 30, 31, 0)  appears_in=9 runs
+    sig=(4, 16, 19, 0)  appears_in=9 runs
+    sig=(4, 15, 16, 0)  appears_in=9 runs
+    sig=(4, 9, 9, 0)  appears_in=7 runs
+    sig=(4, 32, 34, 0)  appears_in=6 runs
+    sig=(4, 18, 18, 0)  appears_in=6 runs
+    sig=(4, 31, 35, 0)  appears_in=6 runs
+    sig=(4, 16, 18, 0)  appears_in=6 runs
+    sig=(4, 15, 17, 0)  appears_in=6 runs
+
+=== 2) Enrichment Test (nominal) + Bootstrap CI ===
+Nominal: th=0.25, eps=0.05, ent_bin=0.10
+
+Nominal basic stats:
+Retained candidates: 78011
+Score: mean=0.321, median=0.196, max=1.000
+Leakage_raw: mean=0.456, median=0.451, min=0.000
+dom_count distribution:
+  dom_count=1: 3.8% (n=2971)
+  dom_count=2: 28.7% (n=22389)
+  dom_count=3: 2.0% (n=1546)
+  dom_count=4: 64.9% (n=50649)
+  dom_count=5: 0.2% (n=121)
+  dom_count=6: 0.4% (n=289)
+  dom_count=7: 0.1% (n=46)
+
+Stable set = top 1% by score
+  sig=(4, 11, 19, 0)  point=89.36x  stable=1  overall=1  |  bootstrap=89.48x, 95% CI [83.50, 95.65]
+  sig=(4, 15, 24, 0)  point=89.36x  stable=1  overall=1  |  bootstrap=89.52x, 95% CI [83.61, 95.90]
+  sig=(4, 19, 23, 0)  point=89.36x  stable=1  overall=1  |  bootstrap=89.66x, 95% CI [83.86, 95.48]
+  sig=(4, 13, 22, 0)  point=89.36x  stable=1  overall=1  |  bootstrap=89.65x, 95% CI [83.89, 96.03]
+  sig=(4, 16, 24, 0)  point=89.36x  stable=1  overall=1  |  bootstrap=89.27x, 95% CI [83.47, 95.63]
+
+Stable set = top 5% by score
+  sig=(4, 8, 8, 0)  point=20.00x  stable=40  overall=40  |  bootstrap=19.99x, 95% CI [19.98, 20.00]
+  sig=(4, 13, 18, 0)  point=20.00x  stable=5  overall=5  |  bootstrap=19.99x, 95% CI [19.98, 20.00]
+  sig=(4, 15, 17, 0)  point=20.00x  stable=12  overall=12  |  bootstrap=19.99x, 95% CI [19.98, 20.00]
+  sig=(4, 10, 17, 0)  point=20.00x  stable=3  overall=3  |  bootstrap=19.99x, 95% CI [19.98, 20.00]
+  sig=(4, 11, 19, 0)  point=20.00x  stable=1  overall=1  |  bootstrap=19.99x, 95% CI [19.98, 20.00]
+
+=== 3) Hold-out Replication (nominal) ===
+Half A seeds=25000 | Half B seeds=25000
+
+Top-10 set overlap (top 5% stable enrichment): Jaccard=0.000 (inter=0, union=20)
+Overlapping signatures:
+
+=== End of v0_6.1_Final ===
+Log written to: C:\Users\tomst\PycharmProjects\qubits_1\v0_6_1_Final_output.txt

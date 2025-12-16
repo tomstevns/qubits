@@ -1,0 +1,79 @@
+=== v0_6.1: Systematic Signature Detection + Interestingness Scoring (fixed heap) ===
+Qubits: 3
+Seeds scanned: 60
+Pauli terms per H: 5
+Near-degeneracy epsilon: 0.01
+Dominant threshold: 0.15
+Dynamics: total_time=4.0 (TIME_STEPS=20, DT=0.2)
+Leakage bins: [0.0, 0.01, 0.05, 0.1, 0.2, 0.4, 0.6, 0.8, 1.01]
+Signature key: (dom_count, entropy_i_centi, entropy_j_centi, leakage_bin_idx)
+Scoring: score = 1 - clamp( L_raw / (1 - k/d) )
+
+=== Accounting ===
+Total near-degenerate pairs found: 72
+Total candidates considered: 71
+Trivial full-space candidates skipped (dom_count == 8): 25
+Candidates retained: 46
+
+=== Leakage (raw) summary across retained candidates ===
+{'n': 46, 'min': 0.007344649621621735, 'p10': 0.02732871509476631, 'p50': 0.2835109743795591, 'p90': 0.5100398626041616, 'max': 0.5608419136854226, 'mean': 0.2582603768633166}
+
+=== Interestingness score summary across retained candidates ===
+{'n': 46, 'min': 0.0, 'p10': 0.0, 'p50': 0.37142267005436835, 'p90': 0.9621732995702258, 'max': 0.9824204798793088, 'mean': 0.4223076148442047}
+
+=== Signature Summary by Frequency (Top 25) ===
+Display: (dom_count, entropy_i_bits, entropy_j_bits, leakage_bin) -> occurrences
+(4, 1.75, 1.75, '0.4-0.6') -> 2
+(4, 2.60, 2.60, '0.4-0.6') -> 2
+(5, 2.69, 2.59, '0.05-0.1') -> 1
+(6, 2.65, 2.65, '0.05-0.1') -> 1
+(6, 2.76, 2.61, '0.05-0.1') -> 1
+(4, 2.58, 2.58, '0.4-0.6') -> 1
+(4, 2.56, 2.56, '0.4-0.6') -> 1
+(6, 2.58, 2.58, '0.4-0.6') -> 1
+(4, 1.49, 1.49, '0.2-0.4') -> 1
+(4, 1.49, 1.49, '0.4-0.6') -> 1
+(6, 1.80, 1.80, '0.1-0.2') -> 1
+(6, 1.73, 1.73, '0.1-0.2') -> 1
+(4, 1.80, 1.80, '0.2-0.4') -> 1
+(4, 2.31, 2.31, '0.2-0.4') -> 1
+(6, 2.67, 2.67, '0.1-0.2') -> 1
+(6, 2.70, 2.70, '0.1-0.2') -> 1
+(4, 2.25, 2.25, '0-0.01') -> 1
+(6, 2.11, 2.11, '0-0.01') -> 1
+(4, 2.15, 2.15, '0-0.01') -> 1
+(4, 2.13, 2.13, '0-0.01') -> 1
+(4, 1.58, 1.58, '0.2-0.4') -> 1
+(4, 1.87, 1.87, '0.2-0.4') -> 1
+(4, 2.02, 2.02, '0.2-0.4') -> 1
+(4, 1.47, 1.47, '0.2-0.4') -> 1
+(6, 2.58, 2.58, '0.1-0.2') -> 1
+
+=== Signature Summary by Mean Interestingness (count >= 10) ===
+Display: (dom_count, entropy_i_bits, entropy_j_bits, leakage_bin) -> count, mean_score, mean_leak, min_leak
+
+=== Compact Subspaces Only (dom_count <= 4, count >= 10) ===
+
+=== Top 20 Individual Candidates by Interestingness ===
+[1] score=0.982  L_raw=0.009  L_adj=0.018  bin=0-0.01  dom=4  seed=27  pair=(0, 1)  dE=0.000000  entropies=(2.246,2.246)
+[2] score=0.982  L_raw=0.009  L_adj=0.018  bin=0-0.01  dom=4  seed=27  pair=(6, 7)  dE=0.000000  entropies=(2.133,2.133)
+[3] score=0.982  L_raw=0.009  L_adj=0.018  bin=0-0.01  dom=4  seed=27  pair=(4, 5)  dE=0.000000  entropies=(2.153,2.153)
+[4] score=0.971  L_raw=0.007  L_adj=0.029  bin=0-0.01  dom=6  seed=27  pair=(2, 3)  dE=0.000000  entropies=(2.110,2.110)
+[5] score=0.962  L_raw=0.028  L_adj=0.038  bin=0.01-0.05  dom=2  seed=59  pair=(0, 1)  dE=0.000000  entropies=(1.999,1.999)
+[6] score=0.962  L_raw=0.028  L_adj=0.038  bin=0.01-0.05  dom=2  seed=59  pair=(6, 7)  dE=0.000000  entropies=(1.241,1.241)
+[7] score=0.945  L_raw=0.027  L_adj=0.055  bin=0.01-0.05  dom=4  seed=59  pair=(4, 5)  dE=0.000000  entropies=(2.017,2.017)
+[8] score=0.945  L_raw=0.027  L_adj=0.055  bin=0.01-0.05  dom=4  seed=59  pair=(2, 3)  dE=0.000000  entropies=(1.907,1.907)
+[9] score=0.822  L_raw=0.067  L_adj=0.178  bin=0.05-0.1  dom=5  seed=0  pair=(0, 1)  dE=0.000000  entropies=(2.694,2.592)
+[10] score=0.752  L_raw=0.062  L_adj=0.248  bin=0.05-0.1  dom=6  seed=0  pair=(2, 3)  dE=0.000000  entropies=(2.647,2.645)
+[11] score=0.703  L_raw=0.074  L_adj=0.297  bin=0.05-0.1  dom=6  seed=0  pair=(6, 7)  dE=0.000000  entropies=(2.757,2.610)
+[12] score=0.434  L_raw=0.142  L_adj=0.566  bin=0.1-0.2  dom=6  seed=57  pair=(0, 1)  dE=0.000000  entropies=(2.635,2.635)
+[13] score=0.434  L_raw=0.142  L_adj=0.566  bin=0.1-0.2  dom=6  seed=57  pair=(4, 5)  dE=0.000000  entropies=(2.774,2.774)
+[14] score=0.433  L_raw=0.284  L_adj=0.567  bin=0.2-0.4  dom=4  seed=45  pair=(0, 1)  dE=0.000000  entropies=(1.999,1.999)
+[15] score=0.433  L_raw=0.284  L_adj=0.567  bin=0.2-0.4  dom=4  seed=45  pair=(6, 7)  dE=0.000000  entropies=(1.759,1.759)
+[16] score=0.433  L_raw=0.284  L_adj=0.567  bin=0.2-0.4  dom=4  seed=45  pair=(2, 3)  dE=0.000000  entropies=(2.034,2.034)
+[17] score=0.433  L_raw=0.284  L_adj=0.567  bin=0.2-0.4  dom=4  seed=45  pair=(4, 5)  dE=0.000000  entropies=(1.783,1.783)
+[18] score=0.422  L_raw=0.289  L_adj=0.578  bin=0.2-0.4  dom=4  seed=51  pair=(2, 3)  dE=0.000000  entropies=(1.972,1.972)
+[19] score=0.422  L_raw=0.289  L_adj=0.578  bin=0.2-0.4  dom=4  seed=51  pair=(4, 5)  dE=0.000000  entropies=(1.910,1.910)
+[20] score=0.422  L_raw=0.289  L_adj=0.578  bin=0.2-0.4  dom=4  seed=51  pair=(6, 7)  dE=0.000000  entropies=(1.733,1.733)
+
+=== End of v0_6.1 ===

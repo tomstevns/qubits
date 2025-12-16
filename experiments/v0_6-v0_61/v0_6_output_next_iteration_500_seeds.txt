@@ -1,0 +1,26 @@
+=== v0_6: Systematic Signature Detection ===
+Qubits: 3
+Seeds scanned: 500
+
+=== Signature Summary ===
+Format: (dominant_basis_count, entropy_i, entropy_j, leakage)
+
+Trivial full-space cases skipped (dominant_basis_count == 8): 280
+
+(4, 1.0, 1.0, 0.0)  ->  occurrences: 7
+(4, 1.78, 1.78, 0.51)  ->  occurrences: 6
+(4, 2.62, 2.62, 0.89)  ->  occurrences: 4
+(4, 1.5, 1.5, -0.0)  ->  occurrences: 4
+(4, 1.42, 1.42, 0.15)  ->  occurrences: 4
+(4, 1.75, 1.75, 0.26)  ->  occurrences: 4
+(4, 1.5, 1.5, 0.45)  ->  occurrences: 3
+(4, 1.69, 1.69, 0.38)  ->  occurrences: 3
+(4, 1.75, 1.75, 0.6)  ->  occurrences: 2
+(4, 2.13, 2.13, 0.49)  ->  occurrences: 2
+(4, 2.31, 2.31, 0.48)  ->  occurrences: 2
+(4, 2.6, 2.6, 0.48)  ->  occurrences: 2
+(2, 0.94, 0.94, 0.59)  ->  occurrences: 2
+(2, 1.13, 1.13, 0.69)  ->  occurrences: 2
+(6, 2.67, 2.67, 0.26)  ->  occurrences: 2
+
+=== End of v0_6 ===

@@ -1,0 +1,24 @@
+=== v0_6: Systematic Signature Detection ===
+Qubits: 3
+Seeds scanned: 60
+
+=== Signature Summary ===
+Format: (dominant_basis_count, entropy_i, entropy_j, leakage)
+
+(8, np.float64(1.96), np.float64(1.96), np.float64(-0.0))  ->  occurrences: 2
+(4, np.float64(1.75), np.float64(1.75), np.float64(0.6))  ->  occurrences: 2
+(8, np.float64(2.39), np.float64(2.39), np.float64(0.0))  ->  occurrences: 2
+(8, np.float64(2.49), np.float64(2.49), np.float64(0.0))  ->  occurrences: 2
+(8, np.float64(2.08), np.float64(2.08), np.float64(-0.0))  ->  occurrences: 2
+(4, np.float64(2.6), np.float64(2.6), np.float64(0.48))  ->  occurrences: 2
+(5, np.float64(2.69), np.float64(2.59), np.float64(0.72))  ->  occurrences: 1
+(6, np.float64(2.65), np.float64(2.65), np.float64(0.45))  ->  occurrences: 1
+(8, np.float64(2.72), np.float64(2.68), np.float64(-0.0))  ->  occurrences: 1
+(6, np.float64(2.76), np.float64(2.61), np.float64(0.65))  ->  occurrences: 1
+(8, np.float64(2.59), np.float64(2.59), np.float64(0.0))  ->  occurrences: 1
+(4, np.float64(2.58), np.float64(2.58), np.float64(0.05))  ->  occurrences: 1
+(4, np.float64(2.56), np.float64(2.56), np.float64(0.05))  ->  occurrences: 1
+(6, np.float64(2.58), np.float64(2.58), np.float64(0.28))  ->  occurrences: 1
+(4, np.float64(1.49), np.float64(1.49), np.float64(0.52))  ->  occurrences: 1
+
+=== End of v0_6 ===
