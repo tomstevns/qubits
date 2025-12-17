@@ -1,4 +1,4 @@
-AI-Driven Discovery of Physics-Native Quantum Information Units
+# AI-Driven Discovery of Physics-Native Quantum Information Units
 
 This repository contains the accompanying material for the ongoing whitepaper series:
 
@@ -6,7 +6,7 @@ AI-Driven Discovery of Physics-Native Quantum Information Units
 Repository/Experiment Status: up to v0.6.1 (December 2025)
 Author: Tom Stevns
 
-Motivation
+# Motivation
 
 This work explores whether quantum information units beyond engineered qubits may naturally emerge from the symmetry, degeneracy, and low-energy structure of physical Hamiltonians — and whether modern computational tools (classical and AI-assisted) can help identify and validate such physics-native subspaces.
 
