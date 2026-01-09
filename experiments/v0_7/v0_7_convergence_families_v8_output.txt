@@ -1,0 +1,89 @@
+=== v0.7 Convergence (v8): Non-trivial stability + matched null ===
+Qubits: 3 (d=8) | terms=5
+Batches: 3 × 5000 seeds | eps=0.05
+Dominant support: top_m=2 per eigenvector | max_union=4
+Leakage proxy: times=[0.5, 1.0, 1.5] (computational-subspace leakage)
+Signature binning: ent_step=0.1 | leak_step=0.05
+Evidence: stable_frac=0.010 | topK=25 | min_overall=15 | min_stable=3 | alpha=0.5
+Bootstrap: 400 (median-diff CI) | seed=123
+Output: v0_7_convergence_families_v8_output.txt
+
+Batch 0: seeds=5000 offset=0 | REAL_cands=10434 | NULL_cands=10434 | elapsed=5.9s
+Batch 1: seeds=5000 offset=100000 | REAL_cands=10897 | NULL_cands=10897 | elapsed=5.9s
+Batch 2: seeds=5000 offset=200000 | REAL_cands=10587 | NULL_cands=10587 | elapsed=5.9s
+
+--- Batch 0 | Model REAL ---
+candidates=10434 | score(mean/median/max)=0.527/0.503/0.889 | leak(mean/median/min)=0.379/0.413/0.000 | dom(median)=4.0 | ent(median)=1.52
+
+Top 10 signature families for REAL (stable vs overall) [smoothed, filtered]:
+Format: sig=(dom, ent_bin_i, ent_bin_j, leak_bin) | overall | stable | enrichment
+  (4, 0, 0, 0) |    19 |    19 |    99.38x
+  (4, 4, 4, 0) |    18 |    15 |    83.27x
+  (4, 1, 1, 0) |    20 |    16 |    79.99x
+  (4, 2, 2, 0) |    20 |    15 |    75.14x
+  (4, 5, 5, 0) |    24 |    10 |    42.59x
+  (4, 6, 6, 0) |   102 |     4 |     4.36x
+
+--- Batch 0 | Model NULL_HAAR_BASIS ---
+candidates=10434 | score(mean/median/max)=0.513/0.513/0.774 | leak(mean/median/min)=0.401/0.400/0.021 | dom(median)=4.0 | ent(median)=1.73
+
+Top 10 signature families for NULL_HAAR_BASIS (stable vs overall) [smoothed, filtered]:
+Format: sig=(dom, ent_bin_i, ent_bin_j, leak_bin) | overall | stable | enrichment
+
+--- Batch 1 | Model REAL ---
+candidates=10897 | score(mean/median/max)=0.531/0.508/0.869 | leak(mean/median/min)=0.374/0.405/0.000 | dom(median)=4.0 | ent(median)=1.51
+
+Top 10 signature families for REAL (stable vs overall) [smoothed, filtered]:
+Format: sig=(dom, ent_bin_i, ent_bin_j, leak_bin) | overall | stable | enrichment
+  (4, 0, 0, 0) |    15 |    15 |    99.07x
+  (4, 2, 2, 0) |    21 |    17 |    80.64x
+  (4, 4, 4, 0) |    23 |    17 |    73.78x
+  (4, 5, 5, 0) |    43 |    18 |    42.13x
+  (4, 3, 3, 0) |    15 |     6 |    41.55x
+
+--- Batch 1 | Model NULL_HAAR_BASIS ---
+candidates=10897 | score(mean/median/max)=0.514/0.513/0.823 | leak(mean/median/min)=0.400/0.399/0.007 | dom(median)=4.0 | ent(median)=1.73
+
+Top 10 signature families for NULL_HAAR_BASIS (stable vs overall) [smoothed, filtered]:
+Format: sig=(dom, ent_bin_i, ent_bin_j, leak_bin) | overall | stable | enrichment
+
+--- Batch 2 | Model REAL ---
+candidates=10587 | score(mean/median/max)=0.529/0.507/0.898 | leak(mean/median/min)=0.376/0.405/0.000 | dom(median)=4.0 | ent(median)=1.50
+
+Top 10 signature families for REAL (stable vs overall) [smoothed, filtered]:
+Format: sig=(dom, ent_bin_i, ent_bin_j, leak_bin) | overall | stable | enrichment
+  (4, 4, 4, 0) |    15 |    12 |    79.80x
+  (4, 5, 5, 0) |    24 |    12 |    50.49x
+  (4, 6, 6, 0) |   102 |    23 |    22.69x
+
+--- Batch 2 | Model NULL_HAAR_BASIS ---
+candidates=10587 | score(mean/median/max)=0.512/0.511/0.821 | leak(mean/median/min)=0.401/0.401/0.002 | dom(median)=4.0 | ent(median)=1.73
+
+Top 10 signature families for NULL_HAAR_BASIS (stable vs overall) [smoothed, filtered]:
+Format: sig=(dom, ent_bin_i, ent_bin_j, leak_bin) | overall | stable | enrichment
+
+=== (1) Top-family stability across batches (Jaccard overlap) ===
+REAL: Top-25 Jaccard overlaps = [0.571, 0.5, 0.333] | mean=0.468
+NULL_HAAR_BASIS: Top-25 Jaccard overlaps = [1.0, 1.0, 1.0] | mean=1.000
+
+=== (2) Distribution-level effect sizes (REAL vs NULL) ===
+Leakage median difference (REAL - NULL): 0.0081 | 95% CI [0.0032, 0.0132]
+Entropy  median difference (REAL - NULL): -0.2182 | 95% CI [-0.2239, -0.2119]
+(Interpretation: a non-zero, reproducible difference supports non-chance structure under matched settings.)
+
+=== (3) Cross-model enrichment (smoothed; filtered; pooled) ===
+Format: sig | enr_REAL | enr_NULL | ratio(REAL/NULL)
+  (2, 7, 7, 0) |   99.75x |    1.00x |   99.75x
+  (4, 0, 0, 0) |   99.75x |    1.00x |   99.75x
+  (4, 1, 1, 0) |   84.73x |    1.00x |   84.73x
+  (4, 4, 4, 0) |   78.56x |    1.00x |   78.56x
+  (4, 2, 2, 0) |   73.64x |    1.00x |   73.64x
+  (4, 3, 3, 0) |   62.92x |    1.00x |   62.92x
+  (4, 5, 5, 0) |   50.69x |    1.00x |   50.69x
+  (4, 6, 6, 0) |    5.72x |    1.00x |    5.72x
+  (4, 17, 17, 1) |    1.00x |   87.66x |    0.01x
+
+=== Notes (scientific reading) ===
+1) Leakage is now defined relative to a computational-basis encoding support, not eigen-subspace invariance.
+2) Strong claims require convergence (stable overlaps) + reproducible REAL vs NULL separation (effect sizes / ratios).
+3) If effects are near-zero with tight CIs, the proxy/encoding may still be insufficiently sensitive at n=3.

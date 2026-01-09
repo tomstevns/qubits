@@ -1,0 +1,73 @@
+=== v0_7 Convergence (Families v2) ===
+Qubits: 3 (d=8) | terms=5 | seeds/batch=5000 | batches=3
+Neighbor eps=0.05
+dom_threshold=0.25 | ent_step=0.2 | leak_step=0.1
+times=[0.5, 1.0, 1.5] | stable_frac=0.01 | topK=25
+smoothing alpha=1.0 | min_overall=25 | min_stable=3
+bootstrap=200 | bootstrap_seed=7
+Output file: C:\Users\tomst\PycharmProjects\qubits_1\venv\v0_6.2\v0_7_convergence_families_v2_output.txt
+
+--- Batch 1/3 ---
+seed_offset=0 | candidates_real=11005 | candidates_null=11005 | elapsed=5.30s
+Median(ent_bin): REAL=11.000 | NULL=12.000 | diff=-1.000 | bootstrap CI95=(-1.0, -1.0)
+
+Top families (REAL) [rank: stable_count, overall_count, enrichment]
+  Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (2, 10, 0) |    65 |    35 |    54.08x
+  (2, 11, 0) |    30 |    10 |    35.18x
+
+Top families (NULL) [rank: stable_count, overall_count, enrichment]
+  Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (1, 12, 2) |    44 |    33 |    74.92x
+  (1, 13, 2) |    38 |    19 |    50.85x
+
+--- Batch 2/3 ---
+seed_offset=5000 | candidates_real=10834 | candidates_null=10834 | elapsed=5.27s
+Median(ent_bin): REAL=11.000 | NULL=12.000 | diff=-1.000 | bootstrap CI95=(-2.0, -1.0)
+
+Top families (REAL) [rank: stable_count, overall_count, enrichment]
+  Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (2, 10, 0) |    52 |    24 |    46.89x
+  (2, 1, 0) |    36 |    16 |    45.67x
+  (2, 15, 0) |    25 |    15 |    61.17x
+  (2, 11, 0) |    27 |    10 |    39.05x
+
+Top families (NULL) [rank: stable_count, overall_count, enrichment]
+  Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (1, 12, 2) |    43 |    36 |    83.59x
+  (1, 13, 2) |    36 |    31 |    85.97x
+
+--- Batch 3/3 ---
+seed_offset=10000 | candidates_real=11168 | candidates_null=11168 | elapsed=5.24s
+Median(ent_bin): REAL=11.000 | NULL=12.000 | diff=-1.000 | bootstrap CI95=(-1.0, -1.0)
+
+Top families (REAL) [rank: stable_count, overall_count, enrichment]
+  Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (2, 10, 0) |    43 |    19 |    45.33x
+  (2, 14, 0) |    27 |    13 |    49.86x
+  (2, 11, 0) |    38 |     9 |    25.57x
+
+Top families (NULL) [rank: stable_count, overall_count, enrichment]
+  Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (1, 12, 2) |    45 |    28 |    62.87x
+  (1, 13, 2) |    40 |    25 |    63.24x
+
+=== Convergence diagnostics (Top-K overlap) ===
+REAL overlap Top-25: batch1 vs batch2: inter= 2 | Jaccard=0.500
+NULL overlap Top-25: batch1 vs batch2: inter= 2 | Jaccard=1.000
+REAL overlap Top-25: batch1 vs batch3: inter= 2 | Jaccard=0.667
+NULL overlap Top-25: batch1 vs batch3: inter= 2 | Jaccard=1.000
+REAL overlap Top-25: batch2 vs batch3: inter= 2 | Jaccard=0.400
+NULL overlap Top-25: batch2 vs batch3: inter= 2 | Jaccard=1.000
+
+=== Distribution-level stability (entropy-bin median difference) ===
+diffs across batches: [-1.0, -1.0, -1.0]
+mean(diff)=-1.000 | std(diff)=0.000
+
+=== Reading guide ===
+1) If REAL Top-K overlaps are non-zero and reasonably stable, family labels are becoming replicable.
+2) The entropy-bin median difference (REAL - NULL) is a robust distribution-level signal; if stable across batches,
+   it supports convergence even if some families remain noisy.
+3) If Top-K overlap is still ~0, increase coarsening (ent_step/leak_step), raise min_overall, and/or increase support-first ranking.
+
+=== End of v0_7 convergence v2 ===

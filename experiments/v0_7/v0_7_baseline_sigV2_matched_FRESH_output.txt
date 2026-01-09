@@ -1,0 +1,11 @@
+=== v0_7 SigV2: Baseline / Null-Model Calibration ===
+Qubits: 3 (d=8) | terms=5 | seeds=5000
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.250 | ent_bin=0.100 | leak_bin=0.050
+Family binning: ent_step=0.100 | leak_step=0.050
+Evidence: stable_fracs=[0.01] | topK=50 | bootstrap=200
+Output: C:\Users\tomst\PycharmProjects\qubits_1\venv\v0_6.2\v0_7_baseline_sigV2_matched_FRESH_output.txt
+
+----------------------------------------------
+Model: REAL
+candidates=7449 | score(mean/median/max)=0.299/0.159/1.000 | leakage(mean/median/min)=0.476/0.471/0.000 | dom_count(median)=4

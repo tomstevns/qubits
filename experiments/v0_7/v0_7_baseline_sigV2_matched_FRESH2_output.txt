@@ -1,0 +1,11 @@
+=== v0_7 SigV2: Baseline / Null-Model Calibration (Matched FRESH2) ===
+Qubits: 3 (d=8) | terms=5 | seeds=5000
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.250 | family bins: ent_step=0.100 | leak_step=0.050
+Evidence: stable_fracs=[0.01, 0.05] | topK=50 | bootstrap=200 | min_support=50
+Output: C:\Users\tomst\PycharmProjects\qubits_1\venv\v0_6.2\v0_7_baseline_sigV2_matched_FRESH2_output.txt
+
+Model: REAL | candidates=10466 | elapsed=2.7s
+
+=== REAL: Signature enrichment (stable-set vs overall) ===
+candidates=10466 | score(mean/median/max)=0.056/0.055/0.492 | leakage(mean/median/min)=0.522/0.446/0.000 | dom_count(median)=2

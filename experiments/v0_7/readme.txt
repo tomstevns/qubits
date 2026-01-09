@@ -1,0 +1,1 @@
+“sigV1 denotes the original signature definition used in v0_6.1 and v0_7 baseline. sigV2 introduces a revised signature discretization to reduce chance-driven ‘dominant basis count’ saturation; all comparisons against null are rerun under sigV2.”

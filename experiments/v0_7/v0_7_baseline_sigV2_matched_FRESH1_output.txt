@@ -1,0 +1,79 @@
+=== v0_7 SigV2: Baseline / Null-Model Calibration (MATCHED) ===
+Qubits: 3 (d=8) | terms=5 | seeds=5000
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.250 | ent_bin=0.100 | leak_bin=0.050
+Family binning: ent_step=0.100 | leak_step=0.050
+Evidence: stable_frac=0.010 | min_support=10 | topK=50 | bootstrap=200
+Output: C:\Users\tomst\PycharmProjects\qubits_1\venv\v0_6.2\v0_7_baseline_sigV2_matched_FRESH1_output.txt
+
+----------------------------------------------
+Model: REAL
+  progress: 500/5000 seeds
+  progress: 1000/5000 seeds
+  progress: 1500/5000 seeds
+  progress: 2000/5000 seeds
+  progress: 2500/5000 seeds
+  progress: 3000/5000 seeds
+  progress: 3500/5000 seeds
+  progress: 4000/5000 seeds
+  progress: 4500/5000 seeds
+  progress: 5000/5000 seeds
+candidates=7689 | score(mean/median/max)=0.527/0.515/1.000 | leakage(mean/median/min)=0.618/0.603/0.000 | dom_count(median)=4
+Stable set size: 77 (effective stable_frac=0.010)
+Top enriched signature families (family_key -> EF, stable_rate, counts, bootstrap CI):
+  fam=(2, 19, 0)  EF=88.76x  stable_rate=0.889  stable=16  overall=18  |  bootstrap=86.56x, CI95% [65.03, 99.86]
+  fam=(2, 20, 0)  EF=74.89x  stable_rate=0.750  stable=12  overall=16  |  bootstrap=74.36x, CI95% [49.69, 93.16]
+Hold-out replication: n/a (empty topK after filtering in one half)
+Model runtime: 5.2 s
+
+----------------------------------------------
+Model: BASIS_PERMUTE
+  progress: 500/5000 seeds
+  progress: 1000/5000 seeds
+  progress: 1500/5000 seeds
+  progress: 2000/5000 seeds
+  progress: 2500/5000 seeds
+  progress: 3000/5000 seeds
+  progress: 3500/5000 seeds
+  progress: 4000/5000 seeds
+  progress: 4500/5000 seeds
+  progress: 5000/5000 seeds
+candidates=7689 | score(mean/median/max)=0.527/0.515/1.000 | leakage(mean/median/min)=0.618/0.603/0.000 | dom_count(median)=4
+Stable set size: 77 (effective stable_frac=0.010)
+Top enriched signature families (family_key -> EF, stable_rate, counts, bootstrap CI):
+  fam=(2, 19, 0)  EF=88.76x  stable_rate=0.889  stable=16  overall=18  |  bootstrap=86.58x, CI95% [65.03, 99.86]
+  fam=(2, 20, 0)  EF=74.89x  stable_rate=0.750  stable=12  overall=16  |  bootstrap=74.38x, CI95% [49.69, 93.16]
+Hold-out replication: n/a (empty topK after filtering in one half)
+Model runtime: 6.4 s
+
+----------------------------------------------
+Model: HAAR_BASIS
+  progress: 500/5000 seeds
+  progress: 1000/5000 seeds
+  progress: 1500/5000 seeds
+  progress: 2000/5000 seeds
+  progress: 2500/5000 seeds
+  progress: 3000/5000 seeds
+  progress: 3500/5000 seeds
+  progress: 4000/5000 seeds
+  progress: 4500/5000 seeds
+  progress: 5000/5000 seeds
+candidates=10752 | score(mean/median/max)=0.811/0.817/0.992 | leakage(mean/median/min)=0.217/0.205/0.012 | dom_count(median)=2
+Stable set size: 108 (effective stable_frac=0.010)
+Top enriched signature families (family_key -> EF, stable_rate, counts, bootstrap CI):
+  fam=(1, 28, 0)  EF=99.56x  stable_rate=1.000  stable=12  overall=12  |  bootstrap=98.11x, CI95% [82.83, 99.56]
+  fam=(1, 25, 0)  EF=99.56x  stable_rate=1.000  stable=10  overall=10  |  bootstrap=99.21x, CI95% [97.75, 99.56]
+  fam=(1, 27, 0)  EF=99.56x  stable_rate=1.000  stable=40  overall=40  |  bootstrap=98.88x, CI95% [95.86, 99.56]
+  fam=(1, 26, 0)  EF=99.56x  stable_rate=1.000  stable=27  overall=27  |  bootstrap=98.45x, CI95% [93.47, 99.56]
+Hold-out replication (family keys): Jaccard=1.000 (inter=2, union=2)
+Model runtime: 9.7 s
+
+----------------------------------------------
+Total runtime: 21.3 s
+
+Interpretation guide (SigV2):
+  - If REAL shows stronger enrichment and better hold-out overlap than HAAR_BASIS, that supports non-chance structure.
+  - BASIS_PERMUTE is a label-invariance sanity check; large deviations vs REAL suggest basis-sensitive definitions.
+  - If REAL and HAAR_BASIS look similar, treat observed signatures as likely chance structure under this pipeline.
+
+=== End of v0_7 SigV2 ===

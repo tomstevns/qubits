@@ -1,0 +1,92 @@
+=== v0_7: Convergence of Signature Families under Matched Null (v3) ===
+Qubits: 3 (d=8) | terms=5
+Batches: 3 x seeds_per_batch=5000 | seed0=0 | stride=100000
+Neighbor eps=0.05
+Dominant threshold=0.25 | ent_step=0.1 | leak_step=0.05
+Leakage proxy times=[0.5, 1.0, 1.5] (exact spectral evolution)
+Evidence settings: stable_frac=0.010 | topK=25 | min_overall=25 | min_stable=3 | smoothing=0.5
+Bootstrap: B=200 | seed=123
+Output: v0_7_convergence_families_v3_output.txt
+
+
+==============================================================
+Batch 0 | seed_offset=0 | seeds=5000
+--------------------------------------------------------------
+Model: REAL           | candidates=9887 | elapsed~2.4s
+Model: NULL_HAAR_BASIS| candidates=9887 | elapsed~2.4s
+
+Distribution diagnostics (bin-level):
+  entropy_bin REAL: n=9887 | mean=21.534 | median=23.000 | min=0.000 | max=30.000
+  entropy_bin NULL: n=9887 | mean=24.292 | median=24.000 | min=15.000 | max=29.000
+  leak_bin    REAL: n=9887 | mean=9.092 | median=10.000 | min=0.000 | max=18.000
+  leak_bin    NULL: n=9887 | mean=9.320 | median=10.000 | min=0.000 | max=16.000
+
+Eligibility after min-count filter:
+  REAL eligible families: 0
+  NULL eligible families: 0
+
+Top-25 REAL families by enrichment (filtered, smoothed):
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment | enr_NULL | ratio | ratio_CI_95
+
+==============================================================
+Batch 1 | seed_offset=100000 | seeds=5000
+--------------------------------------------------------------
+Model: REAL           | candidates=9867 | elapsed~2.4s
+Model: NULL_HAAR_BASIS| candidates=9867 | elapsed~2.4s
+
+Distribution diagnostics (bin-level):
+  entropy_bin REAL: n=9867 | mean=21.371 | median=22.000 | min=1.000 | max=30.000
+  entropy_bin NULL: n=9867 | mean=24.286 | median=24.000 | min=16.000 | max=29.000
+  leak_bin    REAL: n=9867 | mean=8.928 | median=10.000 | min=0.000 | max=17.000
+  leak_bin    NULL: n=9867 | mean=9.313 | median=10.000 | min=0.000 | max=17.000
+
+Eligibility after min-count filter:
+  REAL eligible families: 0
+  NULL eligible families: 0
+
+Top-25 REAL families by enrichment (filtered, smoothed):
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment | enr_NULL | ratio | ratio_CI_95
+
+==============================================================
+Batch 2 | seed_offset=200000 | seeds=5000
+--------------------------------------------------------------
+Model: REAL           | candidates=9947 | elapsed~2.4s
+Model: NULL_HAAR_BASIS| candidates=9947 | elapsed~2.4s
+
+Distribution diagnostics (bin-level):
+  entropy_bin REAL: n=9947 | mean=21.365 | median=22.000 | min=0.000 | max=30.000
+  entropy_bin NULL: n=9947 | mean=24.270 | median=24.000 | min=15.000 | max=28.000
+  leak_bin    REAL: n=9947 | mean=9.050 | median=10.000 | min=0.000 | max=16.000
+  leak_bin    NULL: n=9947 | mean=9.280 | median=10.000 | min=0.000 | max=16.000
+
+Eligibility after min-count filter:
+  REAL eligible families: 0
+  NULL eligible families: 0
+
+Top-25 REAL families by enrichment (filtered, smoothed):
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment | enr_NULL | ratio | ratio_CI_95
+
+==============================================================
+Cross-batch convergence (Top-25 REAL-family overlap)
+--------------------------------------------------------------
+  Batch 0 vs 1: overlap= 0 | Jaccard=1.000
+  Batch 0 vs 2: overlap= 0 | Jaccard=1.000
+  Batch 1 vs 2: overlap= 0 | Jaccard=1.000
+
+  Intersection across all batches: 0 families
+  Union across all batches: 0 families
+Interpretation guide:
+  - If pairwise overlaps are consistently large (and intersection non-trivial),
+    the family labels are stable against batch resampling.
+  - If overlaps collapse toward ~0, the labeling is not replicable at this resolution.
+
+==============================================================
+Bottom-line reading (method-only, no hype):
+--------------------------------------------------------------
+1) If Top-K overlaps remain substantial across batches, the family labels are replicable at this resolution.
+2) If REAL-vs-NULL ratios (with bootstrap CI) are consistently > 1 for the same families,
+   then the stable-set concentration is not explained by the matched null at these settings.
+3) If ratios or overlaps collapse when you slightly change (eps, dom_threshold, ent_step, leak_step),
+   then the labels are likely discretization artifacts; coarsen bins or raise min_overall.
+
+=== End of v0_7_convergence_families_v3 ===

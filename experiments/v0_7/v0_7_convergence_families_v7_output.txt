@@ -1,0 +1,211 @@
+=== v0_7 Convergence: Signature Families (v7) ===
+Qubits: 3 (d=8) | terms=5 | seeds/batch=5000 | batches=3
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.250 | fine bins: ent_step=0.100, leak_step=0.050
+Coarse bins (replication view): ent_step=0.250, leak_step=0.100
+Evidence: stable_frac=0.010 | topK=25 | smoothing alpha=1.00
+Cross-model filters: min_overall_both=10 | min_stable_any=2
+Bootstrap: iters=200 | seed=123
+Output file: C:\Users\tomst\PycharmProjects\qubits_1\venv\v0_6.2\v0_7_convergence_families_v7_output.txt
+
+----------------------------------------------
+Batch 1/3 | seed_offset=0
+Model: REAL | candidates=10846
+  score(mean/median/max)=0.856/1.000/1.000
+  leakage(mean/median/min)=0.000/0.000/0.000
+  dom_count(median)=1
+Model: NULL_HAAR_BASIS | candidates=10846
+  score(mean/median/max)=0.892/1.000/1.000
+  leakage(mean/median/min)=0.000/0.000/0.000
+  dom_count(median)=1
+Batch elapsed: 4.5s
+
+Top within-model families (REAL, by log-enrichment):
+  sig=(dom, ent_i, ent_j, leak) | overall | stable | log_enr | enr
+  (1, 2, 3, 0) |     2 |     1 |   4.195 |   66.34x
+  (1, 4, 7, 0) |     2 |     1 |   4.195 |   66.34x
+  (1, 13, 14, 0) |     1 |     0 |   3.907 |   49.76x
+  (1, 12, 16, 0) |     1 |     0 |   3.907 |   49.76x
+  (1, 14, 16, 0) |     1 |     0 |   3.907 |   49.76x
+  (2, 3, 10, 0) |     1 |     0 |   3.907 |   49.76x
+  (3, 12, 13, 0) |     1 |     0 |   3.907 |   49.76x
+  (2, 7, 14, 0) |     1 |     0 |   3.907 |   49.76x
+  (1, 12, 15, 0) |     1 |     0 |   3.907 |   49.76x
+  (1, 14, 15, 0) |     1 |     0 |   3.907 |   49.76x
+  ...
+
+Top within-model families (NULL_HAAR_BASIS, by log-enrichment):
+  sig=(dom, ent_i, ent_j, leak) | overall | stable | log_enr | enr
+  (1, 9, 15, 0) |     1 |     0 |   3.907 |   49.76x
+  (1, 10, 13, 0) |     1 |     0 |   3.907 |   49.76x
+  (1, 13, 20, 0) |     1 |     0 |   3.907 |   49.76x
+  (1, 8, 14, 0) |     1 |     0 |   3.907 |   49.76x
+  (1, 10, 14, 0) |     1 |     0 |   3.907 |   49.76x
+  (2, 10, 13, 0) |     1 |     0 |   3.907 |   49.76x
+  (0, 20, 20, 0) |     1 |     0 |   3.907 |   49.76x
+  (3, 13, 13, 0) |     1 |     0 |   3.907 |   49.76x
+  (3, 12, 15, 0) |     1 |     0 |   3.907 |   49.76x
+  (2, 7, 11, 0) |     1 |     0 |   3.907 |   49.76x
+  ...
+
+Cross-model calibration (REAL vs NULL) on supported families:
+  sig=(dom, ent_i, ent_j, leak) | log_ratio | ratio | (overallR,stableR) vs (overallN,stableN) | CI95_log_ratio
+  (1, 16, 17, 0) |   1.477 |    4.38x | (10,0) vs (577,11) | [  0.833,  2.431] -> [   2.30x,  11.37x]
+  (0, 18, 20, 0) |   1.409 |    4.09x | (10,2) vs (14,0) | [  0.000,  2.156] -> [   1.00x,   8.63x]
+  (1, 17, 18, 0) |   0.725 |    2.07x | (53,1) vs (947,16) | [ -0.229,  1.813] -> [   0.80x,   6.13x]
+  (1, 15, 15, 0) |   0.303 |    1.35x | (194,5) vs (43,0) | [ -0.885,  0.914] -> [   0.41x,   2.50x]
+  (1, 17, 17, 0) |   0.110 |    1.12x | (636,18) vs (448,11) | [ -0.550,  0.803] -> [   0.58x,   2.23x]
+  (1, 16, 16, 0) |   0.087 |    1.09x | (382,6) vs (178,2) | [ -1.338,  1.431] -> [   0.26x,   4.18x]
+  (0, 19, 19, 0) |   0.003 |    1.00x | (306,6) vs (43,0) | [ -1.347,  0.623] -> [   0.26x,   1.87x]
+  (1, 18, 18, 0) |  -0.025 |    0.98x | (231,2) vs (527,6) | [ -1.427,  0.953] -> [   0.24x,   2.59x]
+  (0, 18, 19, 0) |  -0.080 |    0.92x | (25,0) vs (95,3) | [ -0.792,  1.214] -> [   0.45x,   3.37x]
+  (1, 14, 14, 0) |  -0.550 |    0.58x | (129,4) vs (14,0) | [ -1.765,  0.145] -> [   0.17x,   1.16x]
+
+Distribution-level effects (stable set only; median with bootstrap CI):
+  entropy median: REAL=1.731, NULL=1.749, NULL-REAL=0.018  CI95=[-0.022,0.055]
+  leakage  median: REAL=0.000, NULL=0.000, NULL-REAL=-0.000  CI95=[-0.000,-0.000]
+  dom_cnt  median: REAL=0.000, NULL=1.000, NULL-REAL=1.000  CI95=[0.000,1.000]
+
+----------------------------------------------
+Batch 2/3 | seed_offset=100000
+Model: REAL | candidates=11112
+  score(mean/median/max)=0.856/1.000/1.000
+  leakage(mean/median/min)=0.000/0.000/0.000
+  dom_count(median)=1
+Model: NULL_HAAR_BASIS | candidates=11112
+  score(mean/median/max)=0.889/1.000/1.000
+  leakage(mean/median/min)=0.000/0.000/0.000
+  dom_count(median)=1
+Batch elapsed: 4.5s
+
+Top within-model families (REAL, by log-enrichment):
+  sig=(dom, ent_i, ent_j, leak) | overall | stable | log_enr | enr
+  (1, 4, 5, 0) |     2 |     1 |   4.192 |   66.15x
+  (1, 0, 2, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 12, 13, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 12, 14, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 6, 8, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 6, 14, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 7, 8, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 12, 15, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 10, 17, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 14, 19, 0) |     1 |     0 |   3.904 |   49.61x
+  ...
+
+Top within-model families (NULL_HAAR_BASIS, by log-enrichment):
+  sig=(dom, ent_i, ent_j, leak) | overall | stable | log_enr | enr
+  (3, 13, 17, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 10, 18, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 11, 12, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 8, 16, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 9, 11, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 9, 17, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 7, 18, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 8, 13, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 8, 18, 0) |     1 |     0 |   3.904 |   49.61x
+  (0, 16, 19, 0) |     1 |     0 |   3.904 |   49.61x
+  ...
+
+Cross-model calibration (REAL vs NULL) on supported families:
+  sig=(dom, ent_i, ent_j, leak) | log_ratio | ratio | (overallR,stableR) vs (overallN,stableN) | CI95_log_ratio
+  (1, 16, 17, 0) |   1.231 |    3.42x | (14,0) vs (564,10) | [  0.555,  1.910] -> [   1.74x,   6.75x]
+  (1, 17, 17, 0) |   1.206 |    3.34x | (658,17) vs (488,3) | [  0.442,  2.520] -> [   1.56x,  12.43x]
+  (0, 18, 19, 0) |   0.713 |    2.04x | (60,2) vs (82,1) | [ -0.418,  1.845] -> [   0.66x,   6.33x]
+  (1, 17, 18, 0) |   0.676 |    1.97x | (39,0) vs (1021,12) | [  0.204,  1.229] -> [   1.23x,   3.42x]
+  (0, 19, 19, 0) |   0.151 |    1.16x | (306,6) vs (50,0) | [ -0.831,  0.788] -> [   0.44x,   2.20x]
+  (1, 16, 16, 0) |  -0.111 |    0.90x | (410,5) vs (183,2) | [ -1.402,  1.429] -> [   0.25x,   4.17x]
+  (0, 18, 18, 0) |  -0.176 |    0.84x | (557,12) vs (35,0) | [ -0.772,  0.325] -> [   0.46x,   1.38x]
+  (1, 15, 15, 0) |  -0.220 |    0.80x | (171,5) vs (45,1) | [ -1.707,  0.970] -> [   0.18x,   2.64x]
+  (1, 18, 18, 0) |  -0.369 |    0.69x | (206,1) vs (500,6) | [ -1.475,  0.628] -> [   0.23x,   1.87x]
+  (1, 14, 14, 0) |  -1.511 |    0.22x | (135,2) vs (19,1) | [ -2.830, -0.079] -> [   0.06x,   0.92x]
+
+Distribution-level effects (stable set only; median with bootstrap CI):
+  entropy median: REAL=1.754, NULL=1.760, NULL-REAL=0.007  CI95=[-0.028,0.056]
+  leakage  median: REAL=0.000, NULL=0.000, NULL-REAL=-0.000  CI95=[-0.000,0.000]
+  dom_cnt  median: REAL=0.000, NULL=1.000, NULL-REAL=1.000  CI95=[0.975,1.000]
+
+----------------------------------------------
+Batch 3/3 | seed_offset=200000
+Model: REAL | candidates=10913
+  score(mean/median/max)=0.854/1.000/1.000
+  leakage(mean/median/min)=0.000/0.000/0.000
+  dom_count(median)=1
+Model: NULL_HAAR_BASIS | candidates=10913
+  score(mean/median/max)=0.886/1.000/1.000
+  leakage(mean/median/min)=0.000/0.000/0.000
+  dom_count(median)=1
+Batch elapsed: 4.5s
+
+Top within-model families (REAL, by log-enrichment):
+  sig=(dom, ent_i, ent_j, leak) | overall | stable | log_enr | enr
+  (1, 5, 7, 0) |     2 |     1 |   4.192 |   66.15x
+  (2, 9, 17, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 12, 13, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 17, 20, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 9, 16, 0) |     1 |     0 |   3.904 |   49.61x
+  (3, 10, 10, 0) |     1 |     0 |   3.904 |   49.61x
+  (3, 14, 15, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 1, 2, 0) |     1 |     0 |   3.904 |   49.61x
+  (3, 12, 14, 0) |     1 |     0 |   3.904 |   49.61x
+  (2, 7, 14, 0) |     1 |     0 |   3.904 |   49.61x
+  ...
+
+Top within-model families (NULL_HAAR_BASIS, by log-enrichment):
+  sig=(dom, ent_i, ent_j, leak) | overall | stable | log_enr | enr
+  (1, 11, 20, 0) |     1 |     1 |   4.597 |   99.22x
+  (0, 20, 20, 0) |     2 |     1 |   4.192 |   66.15x
+  (1, 12, 20, 0) |     1 |     0 |   3.904 |   49.61x
+  (3, 13, 16, 0) |     1 |     0 |   3.904 |   49.61x
+  (3, 11, 18, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 10, 12, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 9, 13, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 10, 20, 0) |     1 |     0 |   3.904 |   49.61x
+  (1, 9, 15, 0) |     1 |     0 |   3.904 |   49.61x
+  (3, 13, 17, 0) |     1 |     0 |   3.904 |   49.61x
+  ...
+
+Cross-model calibration (REAL vs NULL) on supported families:
+  sig=(dom, ent_i, ent_j, leak) | log_ratio | ratio | (overallR,stableR) vs (overallN,stableN) | CI95_log_ratio
+  (0, 18, 19, 0) |   0.768 |    2.16x | (47,2) vs (68,1) | [ -0.642,  2.166] -> [   0.53x,   8.72x]
+  (1, 17, 18, 0) |   0.577 |    1.78x | (38,0) vs (971,13) | [  0.186,  1.376] -> [   1.20x,   3.96x]
+  (1, 16, 17, 0) |   0.161 |    1.17x | (27,0) vs (558,16) | [ -0.289,  0.838] -> [   0.75x,   2.31x]
+  (1, 17, 17, 0) |   0.101 |    1.11x | (685,12) vs (466,7) | [ -0.664,  0.860] -> [   0.51x,   2.36x]
+  (0, 18, 18, 0) |   0.037 |    1.04x | (585,18) vs (31,0) | [ -0.586,  0.546] -> [   0.56x,   1.73x]
+  (1, 16, 16, 0) |  -0.015 |    0.99x | (431,13) vs (151,4) | [ -0.737,  1.194] -> [   0.48x,   3.30x]
+  (1, 14, 14, 0) |  -0.018 |    0.98x | (113,6) vs (15,0) | [ -1.157,  0.623] -> [   0.31x,   1.86x]
+  (0, 19, 20, 0) |  -0.288 |    0.75x | (51,2) vs (12,0) | [ -1.534,  0.582] -> [   0.22x,   1.79x]
+  (0, 19, 19, 0) |  -0.550 |    0.58x | (325,3) vs (46,0) | [ -1.949,  0.136] -> [   0.14x,   1.15x]
+  (1, 15, 15, 0) |  -0.563 |    0.57x | (171,3) vs (48,1) | [ -2.006,  0.708] -> [   0.13x,   2.03x]
+
+Distribution-level effects (stable set only; median with bootstrap CI):
+  entropy median: REAL=1.724, NULL=1.739, NULL-REAL=0.015  CI95=[-0.020,0.067]
+  leakage  median: REAL=0.000, NULL=0.000, NULL-REAL=-0.000  CI95=[-0.000,-0.000]
+  dom_cnt  median: REAL=0.000, NULL=1.000, NULL-REAL=1.000  CI95=[0.000,1.000]
+
+==============================================
+Convergence summary across batches
+
+Cross-model Top-K overlap stability (supported families):
+  mean pairwise intersection size: 10.00
+  mean pairwise Jaccard:          0.884
+  intersection across ALL runs:   10
+
+Within-model Top-K overlap stability:
+  REAL: mean intersection=3.67, mean Jaccard=0.079, intersection_all=1
+  NULL: mean intersection=5.33, mean Jaccard=0.120, intersection_all=2
+
+Distribution-level effect stability across batches (stable set):
+  entropy diff (NULL-REAL): mean=0.013, std=0.006
+  leakage  diff (NULL-REAL): mean=-0.000, std=0.000
+  dom_cnt  diff (NULL-REAL): mean=1.000, std=0.000
+
+Interpretation (method-level, no hype):
+  - If Top-K overlaps are high AND distribution-level effects are stable across batches,
+    then the result is unlikely to be a single-run artifact.
+  - If overlaps are low but distribution effects are stable,
+    then the binning is still too fine for family labels to replicate;
+    in that case, increase --min_overall_both, coarsen ent/leak steps, or report effects at distribution level.
+  - If both overlaps and distribution effects are unstable,
+    then increase seeds, tighten the stability score definition, or adjust eps/dom_threshold for a higher-signal candidate set.
+
+=== End of v0_7 convergence v7 ===

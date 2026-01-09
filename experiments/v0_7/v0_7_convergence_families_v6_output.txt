@@ -1,0 +1,194 @@
+=== v0_7 Convergence: Signature Families (v6) ===
+-------------------------------------------------
+Qubits: 3 (d=8) | terms=5
+Batches: 3 x 5000 seeds | seed0=0
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.250 | ent_step=0.100 | leak_step=0.050
+Leakage times=[0.5, 1.0, 1.5]
+Stable_frac=0.010 | topK=25 | min_overall=5
+Smoothing (Beta prior): alpha=0.5 beta=0.5 | bootstrap=200
+Output file: v0_7_convergence_families_v6_output.txt
+
+Batch 1/3 (seeds 0..4999)
+-------------------------
+REAL candidates: 10102 | NULL candidates: 10102 | elapsed=3.3s
+
+Top families by concentration P(stable|sig) (REAL):
+  sig=(2, 0, 0, 0) | overall=15 stable=15 conc=0.969
+  sig=(2, 2, 2, 1) | overall=10 stable=10 conc=0.955
+  sig=(2, 1, 1, 0) | overall=7 stable=7 conc=0.938
+  sig=(2, 2, 2, 2) | overall=5 stable=5 conc=0.917
+  sig=(2, 10, 10, 0) | overall=5 stable=5 conc=0.917
+  sig=(2, 8, 8, 2) | overall=5 stable=3 conc=0.583
+  sig=(2, 3, 3, 2) | overall=11 stable=5 conc=0.458
+  sig=(2, 4, 4, 2) | overall=6 stable=1 conc=0.214
+  sig=(2, 27, 27, 17) | overall=5 stable=0 conc=0.083
+  sig=(1, 22, 22, 17) | overall=5 stable=0 conc=0.083
+Top families by concentration P(stable|sig) (NULL):
+  sig=(1, 25, 26, 7) | overall=5 stable=2 conc=0.417
+  sig=(1, 26, 27, 7) | overall=6 stable=2 conc=0.357
+  sig=(2, 24, 28, 7) | overall=5 stable=0 conc=0.083
+  sig=(3, 22, 26, 5) | overall=5 stable=0 conc=0.083
+  sig=(1, 25, 27, 18) | overall=5 stable=0 conc=0.083
+  sig=(3, 20, 23, 7) | overall=5 stable=0 conc=0.083
+  sig=(3, 21, 22, 9) | overall=5 stable=0 conc=0.083
+  sig=(3, 23, 25, 13) | overall=5 stable=0 conc=0.083
+  sig=(2, 19, 25, 12) | overall=5 stable=0 conc=0.083
+  sig=(1, 24, 27, 8) | overall=5 stable=0 conc=0.083
+
+Top cross-model families by ratio conc_REAL / conc_NULL (smoothed):
+  sig=(2, 0, 0, 0) | conc_REAL=0.969 conc_NULL=0.000 ratio=968750000000.00
+  sig=(2, 2, 2, 1) | conc_REAL=0.955 conc_NULL=0.000 ratio=954545454545.45
+  sig=(2, 1, 1, 0) | conc_REAL=0.938 conc_NULL=0.000 ratio=937500000000.00
+  sig=(2, 2, 2, 2) | conc_REAL=0.917 conc_NULL=0.000 ratio=916666666666.67
+  sig=(2, 10, 10, 0) | conc_REAL=0.917 conc_NULL=0.000 ratio=916666666666.67
+  sig=(2, 8, 8, 2) | conc_REAL=0.583 conc_NULL=0.000 ratio=583333333333.33
+  sig=(2, 3, 3, 2) | conc_REAL=0.458 conc_NULL=0.000 ratio=458333333333.33
+  sig=(2, 4, 4, 2) | conc_REAL=0.214 conc_NULL=0.000 ratio=214285714285.71
+  sig=(4, 24, 24, 1) | conc_REAL=0.083 conc_NULL=0.000 ratio=83333333333.33
+  sig=(4, 12, 12, 3) | conc_REAL=0.083 conc_NULL=0.000 ratio=83333333333.33
+
+Stable-set distribution effect (entropy-bin, stable candidates):
+  median_bin(REAL)=4.00 | median_bin(NULL)=23.00 | diff=-19.00 | boot95=[-21.00,-15.00]
+
+Hold-out replication inside batch (Top-K by conc, split by seed parity):
+  REAL: overlap=3/25 | jaccard=0.064
+  NULL: overlap=2/25 | jaccard=0.042
+
+Batch 2/3 (seeds 5000..9999)
+----------------------------
+REAL candidates: 10113 | NULL candidates: 10113 | elapsed=3.3s
+
+Top families by concentration P(stable|sig) (REAL):
+  sig=(2, 1, 1, 0) | overall=12 stable=12 conc=0.962
+  sig=(2, 3, 3, 1) | overall=9 stable=9 conc=0.950
+  sig=(2, 0, 0, 0) | overall=8 stable=8 conc=0.944
+  sig=(2, 2, 2, 1) | overall=7 stable=7 conc=0.938
+  sig=(2, 5, 5, 2) | overall=6 stable=6 conc=0.929
+  sig=(2, 3, 3, 2) | overall=6 stable=6 conc=0.929
+  sig=(2, 4, 4, 2) | overall=5 stable=5 conc=0.917
+  sig=(2, 4, 4, 3) | overall=11 stable=4 conc=0.375
+  sig=(2, 21, 21, 7) | overall=5 stable=0 conc=0.083
+  sig=(2, 24, 24, 19) | overall=5 stable=0 conc=0.083
+Top families by concentration P(stable|sig) (NULL):
+  sig=(1, 25, 27, 7) | overall=6 stable=3 conc=0.500
+  sig=(3, 20, 24, 7) | overall=5 stable=0 conc=0.083
+  sig=(3, 25, 25, 12) | overall=5 stable=0 conc=0.083
+  sig=(4, 23, 23, 6) | overall=5 stable=0 conc=0.083
+  sig=(3, 21, 24, 5) | overall=5 stable=0 conc=0.083
+  sig=(3, 21, 26, 10) | overall=5 stable=0 conc=0.083
+  sig=(2, 20, 24, 12) | overall=5 stable=0 conc=0.083
+  sig=(2, 24, 27, 5) | overall=5 stable=0 conc=0.083
+  sig=(1, 24, 25, 14) | overall=5 stable=0 conc=0.083
+  sig=(2, 20, 27, 9) | overall=5 stable=0 conc=0.083
+
+Top cross-model families by ratio conc_REAL / conc_NULL (smoothed):
+  sig=(2, 1, 1, 0) | conc_REAL=0.962 conc_NULL=0.000 ratio=961538461538.46
+  sig=(2, 3, 3, 1) | conc_REAL=0.950 conc_NULL=0.000 ratio=950000000000.00
+  sig=(2, 0, 0, 0) | conc_REAL=0.944 conc_NULL=0.000 ratio=944444444444.44
+  sig=(2, 2, 2, 1) | conc_REAL=0.938 conc_NULL=0.000 ratio=937500000000.00
+  sig=(2, 5, 5, 2) | conc_REAL=0.929 conc_NULL=0.000 ratio=928571428571.43
+  sig=(2, 3, 3, 2) | conc_REAL=0.929 conc_NULL=0.000 ratio=928571428571.43
+  sig=(2, 4, 4, 2) | conc_REAL=0.917 conc_NULL=0.000 ratio=916666666666.67
+  sig=(2, 4, 4, 3) | conc_REAL=0.375 conc_NULL=0.000 ratio=375000000000.00
+  sig=(2, 16, 16, 12) | conc_REAL=0.083 conc_NULL=0.000 ratio=83333333333.33
+  sig=(4, 25, 25, 13) | conc_REAL=0.083 conc_NULL=0.000 ratio=83333333333.33
+
+Stable-set distribution effect (entropy-bin, stable candidates):
+  median_bin(REAL)=4.00 | median_bin(NULL)=23.00 | diff=-19.00 | boot95=[-21.00,-19.00]
+
+Hold-out replication inside batch (Top-K by conc, split by seed parity):
+  REAL: overlap=2/25 | jaccard=0.042
+  NULL: overlap=0/25 | jaccard=0.000
+
+Batch 3/3 (seeds 10000..14999)
+------------------------------
+REAL candidates: 10366 | NULL candidates: 10366 | elapsed=3.3s
+
+Top families by concentration P(stable|sig) (REAL):
+  sig=(2, 1, 1, 0) | overall=16 stable=16 conc=0.971
+  sig=(2, 0, 0, 0) | overall=10 stable=10 conc=0.955
+  sig=(2, 3, 3, 2) | overall=9 stable=9 conc=0.950
+  sig=(2, 3, 3, 1) | overall=8 stable=8 conc=0.944
+  sig=(2, 2, 2, 1) | overall=7 stable=7 conc=0.938
+  sig=(2, 22, 22, 3) | overall=5 stable=1 conc=0.250
+  sig=(1, 22, 22, 14) | overall=5 stable=0 conc=0.083
+  sig=(2, 19, 19, 14) | overall=5 stable=0 conc=0.083
+  sig=(1, 24, 24, 11) | overall=5 stable=0 conc=0.083
+  sig=(2, 18, 18, 13) | overall=5 stable=0 conc=0.083
+Top families by concentration P(stable|sig) (NULL):
+  sig=(1, 26, 28, 10) | overall=5 stable=0 conc=0.083
+  sig=(3, 21, 23, 6) | overall=5 stable=0 conc=0.083
+  sig=(2, 19, 26, 9) | overall=5 stable=0 conc=0.083
+  sig=(3, 22, 26, 7) | overall=5 stable=0 conc=0.083
+  sig=(2, 21, 24, 11) | overall=5 stable=0 conc=0.083
+  sig=(3, 21, 25, 8) | overall=5 stable=0 conc=0.083
+  sig=(1, 24, 25, 10) | overall=5 stable=0 conc=0.083
+  sig=(1, 23, 26, 9) | overall=5 stable=0 conc=0.083
+  sig=(2, 23, 27, 16) | overall=5 stable=0 conc=0.083
+  sig=(1, 23, 27, 8) | overall=5 stable=0 conc=0.083
+
+Top cross-model families by ratio conc_REAL / conc_NULL (smoothed):
+  sig=(2, 1, 1, 0) | conc_REAL=0.971 conc_NULL=0.000 ratio=970588235294.12
+  sig=(2, 0, 0, 0) | conc_REAL=0.955 conc_NULL=0.000 ratio=954545454545.45
+  sig=(2, 3, 3, 2) | conc_REAL=0.950 conc_NULL=0.000 ratio=950000000000.00
+  sig=(2, 3, 3, 1) | conc_REAL=0.944 conc_NULL=0.000 ratio=944444444444.44
+  sig=(2, 2, 2, 1) | conc_REAL=0.938 conc_NULL=0.000 ratio=937500000000.00
+  sig=(2, 22, 22, 3) | conc_REAL=0.250 conc_NULL=0.000 ratio=250000000000.00
+  sig=(2, 19, 19, 14) | conc_REAL=0.083 conc_NULL=0.000 ratio=83333333333.33
+  sig=(4, 25, 25, 12) | conc_REAL=0.083 conc_NULL=0.000 ratio=83333333333.33
+  sig=(4, 15, 16, 0) | conc_REAL=0.083 conc_NULL=0.000 ratio=83333333333.33
+  sig=(2, 8, 8, 7) | conc_REAL=0.083 conc_NULL=0.000 ratio=83333333333.33
+
+Stable-set distribution effect (entropy-bin, stable candidates):
+  median_bin(REAL)=3.00 | median_bin(NULL)=24.00 | diff=-21.00 | boot95=[-21.00,-20.00]
+
+Hold-out replication inside batch (Top-K by conc, split by seed parity):
+  REAL: overlap=3/25 | jaccard=0.064
+  NULL: overlap=1/25 | jaccard=0.020
+
+Across-batch stability (Top-K overlap / Jaccard)
+------------------------------------------------
+REAL Top-K:
+  batches 1-2: overlap=6/25 | jaccard=0.136
+  batches 1-3: overlap=4/25 | jaccard=0.087
+  batches 2-3: overlap=6/25 | jaccard=0.136
+
+NULL Top-K:
+  batches 1-2: overlap=1/25 | jaccard=0.020
+  batches 1-3: overlap=0/25 | jaccard=0.000
+  batches 2-3: overlap=0/25 | jaccard=0.000
+
+CROSS (ratio) Top-K:
+  batches 1-2: overlap=5/25 | jaccard=0.111
+  batches 1-3: overlap=5/25 | jaccard=0.111
+  batches 2-3: overlap=6/25 | jaccard=0.136
+
+Consensus families (appear in >=2 batches of CROSS Top-K)
+---------------------------------------------------------
+Format: sig | batches_present | ratio_median | ratio_boot95_median
+  (2, 1, 1, 0) | 3/3 | 961538461538.46 | [1.86,1.95]
+  (2, 0, 0, 0) | 3/3 | 954545454545.45 | [1.80,1.94]
+  (2, 2, 2, 1) | 3/3 | 937500000000.00 | [1.75,1.93]
+  (2, 3, 3, 2) | 3/3 | 928571428571.43 | [1.67,1.92]
+  (2, 3, 3, 1) | 2/3 | 947222222222.22 | [1.80,1.94]
+  (2, 4, 4, 2) | 2/3 | 565476190476.19 | [0.80,1.45]
+  (2, 4, 4, 3) | 2/3 | 229166666666.67 | [0.18,0.90]
+  (4, 16, 16, 10) | 2/3 | 83333333333.33 | [0.10,0.42]
+
+Across-batch distribution effect (median entropy-bin, stable set)
+-----------------------------------------------------------------
+Per-batch median bins (REAL): [4.0, 4.0, 3.0]
+Per-batch median bins (NULL): [23.0, 23.0, 24.0]
+Mean median-bin: REAL=3.67 | NULL=23.33 | diff=-19.67
+
+Interpretation guide (minimal)
+------------------------------
+1) Convergence is supported when CROSS Top-K overlaps are non-trivial across batches,
+   and the distribution-level effect (median entropy-bin in stable set) is stable across batches.
+2) Extremely large ratios can still occur when conc_NULL is very small; smoothing + min_overall
+   makes ratios readable, but replicated families across batches is the key indicator.
+3) If hold-out replication inside batches is low in both REAL and NULL, it usually means
+   the stable set is very small and/or family keys are too fine; increase min_overall or coarsen bins.
+
+=== End of v6 ===

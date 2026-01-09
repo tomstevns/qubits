@@ -1,0 +1,66 @@
+=== v0_7: Convergence Batches (Matched, FAIR) ===
+Qubits: 3 (d=8) | terms=5 | seeds_per_batch=5000 | batches=3
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.250 | ent_step=0.100 | leak_step=0.050
+Leakage proxy: times=[0.5, 1.0, 1.5] | trotter_steps=8
+Evidence: stable_frac=0.010 | topK=25 | smoothing_alpha=1.00
+Min-count filter: min_overall=10 | min_stable=3
+Bootstrap: B=200 | seed=12345
+Output: v0_7_convergence_batches_output_1.txt
+
+----------------------------------------------
+Batch 1/3 | seed_offset=0 | elapsed=18.0s
+REAL candidates=10652 | score(mean/median/max)=0.192/0.160/0.998 | leakage(mean/median/min)=0.646/0.652/0.000
+NULL candidates=10652 | score(mean/median/max)=0.159/0.133/0.800 | leakage(mean/median/min)=0.709/0.726/0.200
+Effect size: median(entropy_bin_med) REAL - NULL = -2.500  (bootstrap 95% CI [-2.500, -2.500])
+Enrichment rows (after filters): REAL=0 | NULL=0
+
+Top families by cross-model ratio (REAL_enr / NULL_enr), smoothed + filtered:
+Format: sig=(dom, ent_i_bin, ent_j_bin, leak_bin) | enr_REAL | enr_NULL | ratio
+
+----------------------------------------------
+Batch 2/3 | seed_offset=100000 | elapsed=17.9s
+REAL candidates=10636 | score(mean/median/max)=0.188/0.160/0.997 | leakage(mean/median/min)=0.643/0.652/0.001
+NULL candidates=10636 | score(mean/median/max)=0.157/0.132/0.811 | leakage(mean/median/min)=0.712/0.727/0.189
+Effect size: median(entropy_bin_med) REAL - NULL = -2.500  (bootstrap 95% CI [-2.500, -2.500])
+Enrichment rows (after filters): REAL=1 | NULL=0
+
+Top families by cross-model ratio (REAL_enr / NULL_enr), smoothed + filtered:
+Format: sig=(dom, ent_i_bin, ent_j_bin, leak_bin) | enr_REAL | enr_NULL | ratio
+  (0, 29, 29, 7) |   97.60x |    0.00x | 97596330275229.36x
+
+----------------------------------------------
+Batch 3/3 | seed_offset=200000 | elapsed=18.1s
+REAL candidates=10838 | score(mean/median/max)=0.189/0.160/0.984 | leakage(mean/median/min)=0.646/0.655/0.003
+NULL candidates=10838 | score(mean/median/max)=0.158/0.132/0.772 | leakage(mean/median/min)=0.711/0.726/0.182
+Effect size: median(entropy_bin_med) REAL - NULL = -2.500  (bootstrap 95% CI [-2.500, -2.500])
+Enrichment rows (after filters): REAL=0 | NULL=0
+
+Top families by cross-model ratio (REAL_enr / NULL_enr), smoothed + filtered:
+Format: sig=(dom, ent_i_bin, ent_j_bin, leak_bin) | enr_REAL | enr_NULL | ratio
+
+==============================================
+Convergence diagnostics across batches
+
+(1) Top-family stability: overlap(Top-25) between runs
+  Batch 1 vs 2: intersection=0 | Jaccard=0.000
+  Batch 1 vs 3: intersection=0 | Jaccard=0.000
+  Batch 2 vs 3: intersection=0 | Jaccard=0.000
+  All-batches: intersection=0 | union=1 | Jaccard=0.000
+
+(2) Distribution effect-size: median(entropy_bin_med) REAL - NULL per batch
+  Batch 1: -2.500  (95% CI [-2.500, -2.500])
+  Batch 2: -2.500  (95% CI [-2.500, -2.500])
+  Batch 3: -2.500  (95% CI [-2.500, -2.500])
+  Across-batch mean(point)=-2.500 | std(point)=0.000
+
+(3) Cross-model enrichment: smoothing + minimum-count filter
+  - smoothing_alpha controls pseudocount smoothing in enrichment computation (prevents infinities).
+  - min_overall/min_stable remove families that are too rare to interpret robustly.
+
+Interpretation guideline:
+  - Convergence in (1) means the *same families* keep showing up as top-ranked under matched settings.
+  - Stability in (2) means the *distribution-level* structure difference is not a single-run artifact.
+  - If both hold, the result is substantially more credible than a single scan.
+
+=== End of v0_7 convergence batches ===

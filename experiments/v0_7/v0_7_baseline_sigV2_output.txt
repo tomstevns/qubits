@@ -1,0 +1,53 @@
+=== v0_7 SigV2: Baseline / Null-Model Calibration ===
+Qubits: 3 (d=8) | terms=6 | seeds=5000
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.050 | ent_bin=0.250 | leak_bin=0.010
+Family binning: ent_step=0.250 | leak_step=0.010
+Evidence: stable_frac=0.050 | min_support=20 | topK=10 | bootstrap=400
+Output: C:\Users\tomst\PycharmProjects\qubits_1\venv\v0_6.2\v0_7_baseline_sigV2_output.txt
+
+----------------------------------------------
+Model: REAL
+candidates=1732 | score(mean/median/max)=0.494/0.528/1.000 | leakage(mean/median/min)=0.197/0.160/0.000 | dom_count(median)=4
+Stable set size: 87 (effective stable_frac=0.050)
+Top enriched signature families (family_key -> EF, stable_rate, counts, bootstrap CI):
+  fam=(4, 8, 8, 2)  EF=0.00x  stable_rate=0.000  stable=0  overall=26  |  bootstrap=0.00x, CI95% [0.00, 0.00]
+Hold-out replication: n/a (empty topK after filtering in one half)
+Model runtime: 4.6 s
+
+----------------------------------------------
+Model: BASIS_PERMUTE
+candidates=1732 | score(mean/median/max)=0.494/0.528/1.000 | leakage(mean/median/min)=0.197/0.160/0.000 | dom_count(median)=4
+Stable set size: 87 (effective stable_frac=0.050)
+Top enriched signature families (family_key -> EF, stable_rate, counts, bootstrap CI):
+  fam=(4, 8, 8, 2)  EF=0.00x  stable_rate=0.000  stable=0  overall=26  |  bootstrap=0.00x, CI95% [0.00, 0.00]
+Hold-out replication: n/a (empty topK after filtering in one half)
+Model runtime: 4.5 s
+
+----------------------------------------------
+Model: HAAR_BASIS
+candidates=3571 | score(mean/median/max)=0.418/0.425/1.000 | leakage(mean/median/min)=0.120/0.087/0.000 | dom_count(median)=7
+Stable set size: 179 (effective stable_frac=0.050)
+Top enriched signature families (family_key -> EF, stable_rate, counts, bootstrap CI):
+  fam=(7, 9, 10, 0)  EF=19.95x  stable_rate=1.000  stable=34  overall=34  |  bootstrap=19.89x, CI95% [19.62, 19.95]
+  fam=(7, 10, 10, 0)  EF=19.95x  stable_rate=1.000  stable=29  overall=29  |  bootstrap=19.88x, CI95% [19.62, 19.95]
+  fam=(7, 10, 11, 0)  EF=19.95x  stable_rate=1.000  stable=28  overall=28  |  bootstrap=19.87x, CI95% [19.62, 19.95]
+  fam=(7, 10, 10, 1)  EF=3.45x  stable_rate=0.173  stable=9  overall=52  |  bootstrap=2.97x, CI95% [0.00, 5.88]
+  fam=(7, 9, 10, 1)  EF=1.40x  stable_rate=0.070  stable=4  overall=57  |  bootstrap=1.63x, CI95% [0.00, 4.72]
+  fam=(7, 10, 11, 1)  EF=1.40x  stable_rate=0.070  stable=4  overall=57  |  bootstrap=1.45x, CI95% [0.00, 3.48]
+  fam=(7, 9, 11, 1)  EF=1.29x  stable_rate=0.065  stable=2  overall=31  |  bootstrap=1.84x, CI95% [0.00, 5.13]
+  fam=(7, 10, 10, 2)  EF=0.00x  stable_rate=0.000  stable=0  overall=52  |  bootstrap=0.00x, CI95% [0.00, 0.00]
+  fam=(7, 9, 10, 2)  EF=0.00x  stable_rate=0.000  stable=0  overall=51  |  bootstrap=0.00x, CI95% [0.00, 0.00]
+  fam=(7, 10, 10, 6)  EF=0.00x  stable_rate=0.000  stable=0  overall=47  |  bootstrap=0.00x, CI95% [0.00, 0.00]
+Hold-out replication (family keys): Jaccard=0.583 (inter=7, union=12)
+Model runtime: 21.0 s
+
+----------------------------------------------
+Total runtime: 30.2 s
+
+Interpretation guide (SigV2):
+  - REAL should show stronger and more consistent enrichment than HAAR_BASIS if non-chance structure exists.
+  - BASIS_PERMUTE is a label-invariance check; large differences vs REAL suggest basis-sensitive definitions.
+  - If REAL and HAAR_BASIS look similar, the pipeline is likely measuring chance structure.
+
+=== End of v0_7 SigV2 ===

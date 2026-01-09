@@ -1,0 +1,154 @@
+=== v0_7 Convergence (Families v4) ===
+Qubits: 3 (d=8) | terms=5
+Batches: 3 | seeds_per_batch=5000 | seed0=12345 | stride=1000000
+Near-degenerate neighbor eps=0.050
+Signature binning: ent_step=0.250 | leak_step=0.100 | dom_threshold=0.250
+Evidence: stable_frac=0.050 | min_overall=10 | min_stable=2 | alpha=1.00 | topK=25
+Leakage proxy: times=[0.5, 1.0, 1.5] | trotter_steps=8
+Bootstrap: n=200 | seed=777
+Output: v0_7_convergence_families_v4_output.txt
+
+--- Batch 0 (seed=12345) | elapsed=10.2s ---
+Batch 0 | REAL: candidates=10571 | score(mean/median/max)=0.099/0.086/0.333 | leakage(mean/median/min)=0.627/0.670/0.000 | entropy(mean/median)=2.142/2.218 | dom(median)=2
+Batch 0 | NULL_HAAR_BASIS: candidates=10571 | score(mean/median/max)=0.130/0.127/0.424 | leakage(mean/median/min)=0.581/0.580/0.089 | entropy(mean/median)=2.453/2.473 | dom(median)=2
+
+REAL: Top signature families (stable-set vs overall)
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (2, 7, 2) |    16 |    16 |    14.41x
+  (2, 4, 2) |    71 |    71 |    14.41x
+  (2, 3, 2) |    42 |    42 |    14.41x
+  (2, 5, 2) |    31 |    31 |    14.41x
+  (2, 1, 0) |    29 |    29 |    14.41x
+  (2, 6, 2) |    25 |    25 |    14.41x
+  (2, 0, 0) |    14 |    14 |    14.41x
+  (2, 8, 2) |    13 |    13 |    14.41x
+  (2, 2, 1) |    49 |    49 |    14.41x
+  (2, 3, 1) |    49 |    49 |    14.41x
+  (2, 4, 3) |    25 |    24 |    13.85x
+  (2, 9, 3) |    11 |    10 |    13.21x
+  (2, 5, 3) |    70 |    63 |    12.99x
+  (2, 7, 3) |    13 |    11 |    12.35x
+  (2, 6, 3) |    32 |    22 |    10.04x
+  (2, 8, 3) |    31 |    19 |     9.00x
+
+NULL: Top signature families (stable-set vs overall)
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (1, 10, 4) |    77 |    77 |    16.08x
+  (1, 10, 3) |    59 |    59 |    16.08x
+  (2, 9, 2) |    37 |    37 |    16.08x
+  (2, 10, 2) |    34 |    34 |    16.08x
+  (1, 11, 4) |    52 |    52 |    16.08x
+  (1, 10, 2) |    10 |    10 |    16.08x
+  (1, 10, 5) |    24 |    23 |    15.43x
+  (1, 11, 5) |    74 |    69 |    15.01x
+  (2, 8, 3) |    35 |    14 |     6.70x
+  (2, 9, 3) |   141 |    51 |     5.89x
+  (2, 10, 3) |   173 |    59 |     5.54x
+  (2, 11, 3) |    28 |     8 |     4.99x
+
+Effect size (median entropy REAL - NULL): -0.256 | 95% CI [-0.271, -0.240]
+Effect size (median leakage REAL - NULL): 0.090 | 95% CI [0.084, 0.095]
+
+--- Batch 1 (seed=1012345) | elapsed=10.2s ---
+Batch 1 | REAL: candidates=10655 | score(mean/median/max)=0.097/0.086/0.333 | leakage(mean/median/min)=0.633/0.669/0.000 | entropy(mean/median)=2.156/2.230 | dom(median)=2
+Batch 1 | NULL_HAAR_BASIS: candidates=10655 | score(mean/median/max)=0.132/0.129/0.439 | leakage(mean/median/min)=0.574/0.571/0.070 | entropy(mean/median)=2.452/2.471 | dom(median)=2
+
+REAL: Top signature families (stable-set vs overall)
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (2, 5, 3) |    74 |    74 |    14.32x
+  (2, 4, 2) |    61 |    61 |    14.32x
+  (2, 2, 1) |    24 |    24 |    14.32x
+  (2, 4, 3) |    22 |    22 |    14.32x
+  (2, 3, 1) |    17 |    17 |    14.32x
+  (2, 9, 3) |    17 |    17 |    14.32x
+  (2, 7, 2) |    15 |    15 |    14.32x
+  (2, 8, 3) |    12 |    12 |    14.32x
+  (2, 6, 2) |    11 |    11 |    14.32x
+  (2, 3, 2) |    52 |    52 |    14.32x
+  (2, 6, 3) |    28 |    28 |    14.32x
+  (2, 5, 2) |    26 |    26 |    14.32x
+  (2, 1, 0) |    16 |    16 |    14.32x
+  (2, 6, 1) |    13 |    13 |    14.32x
+  (2, 8, 4) |    25 |    15 |     8.81x
+  (2, 9, 4) |    20 |    10 |     7.50x
+  (2, 6, 4) |    57 |    27 |     6.91x
+  (2, 7, 4) |    19 |     8 |     6.44x
+  (2, 10, 4) |    15 |     3 |     3.58x
+
+NULL: Top signature families (stable-set vs overall)
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (1, 10, 4) |    89 |    89 |    16.20x
+  (2, 9, 2) |    41 |    41 |    16.20x
+  (2, 10, 2) |    33 |    33 |    16.20x
+  (1, 10, 2) |    16 |    16 |    16.20x
+  (1, 10, 3) |    68 |    68 |    16.20x
+  (1, 11, 4) |    54 |    54 |    16.20x
+  (1, 10, 5) |    24 |    22 |    14.90x
+  (1, 11, 5) |    84 |    75 |    14.48x
+  (2, 7, 3) |    10 |     4 |     7.36x
+  (2, 8, 3) |    30 |    12 |     6.79x
+  (2, 11, 3) |    32 |     8 |     4.42x
+  (2, 10, 3) |   179 |    46 |     4.23x
+  (2, 9, 3) |   132 |    31 |     3.90x
+
+Effect size (median entropy REAL - NULL): -0.241 | 95% CI [-0.256, -0.228]
+Effect size (median leakage REAL - NULL): 0.099 | 95% CI [0.092, 0.105]
+
+--- Batch 2 (seed=2012345) | elapsed=10.2s ---
+Batch 2 | REAL: candidates=10657 | score(mean/median/max)=0.101/0.088/0.364 | leakage(mean/median/min)=0.624/0.665/0.002 | entropy(mean/median)=2.147/2.237 | dom(median)=2
+Batch 2 | NULL_HAAR_BASIS: candidates=10657 | score(mean/median/max)=0.131/0.128/0.444 | leakage(mean/median/min)=0.577/0.574/0.107 | entropy(mean/median)=2.455/2.476 | dom(median)=2
+
+REAL: Top signature families (stable-set vs overall)
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (2, 3, 2) |    62 |    62 |    14.43x
+  (2, 4, 2) |    53 |    53 |    14.43x
+  (2, 7, 2) |    26 |    26 |    14.43x
+  (2, 5, 2) |    19 |    19 |    14.43x
+  (2, 2, 1) |    66 |    66 |    14.43x
+  (2, 3, 1) |    41 |    41 |    14.43x
+  (2, 1, 0) |    21 |    21 |    14.43x
+  (2, 4, 3) |    20 |    20 |    14.43x
+  (2, 6, 2) |    14 |    14 |    14.43x
+  (2, 9, 3) |    14 |    14 |    14.43x
+  (2, 5, 1) |    11 |    11 |    14.43x
+  (2, 5, 3) |    55 |    53 |    13.91x
+  (2, 8, 3) |    18 |    15 |    12.15x
+  (2, 7, 3) |    22 |    18 |    11.92x
+  (2, 6, 3) |    39 |    31 |    11.54x
+
+NULL: Top signature families (stable-set vs overall)
+Format: sig=(dom, ent_bin, leak_bin) | overall | stable | enrichment
+  (1, 10, 4) |    81 |    81 |    16.04x
+  (1, 10, 3) |    72 |    72 |    16.04x
+  (2, 10, 2) |    46 |    46 |    16.04x
+  (2, 9, 2) |    44 |    44 |    16.04x
+  (1, 11, 4) |    38 |    38 |    16.04x
+  (1, 10, 5) |    24 |    24 |    16.04x
+  (2, 8, 2) |    16 |    16 |    16.04x
+  (1, 10, 2) |    15 |    15 |    16.04x
+  (1, 11, 5) |    66 |    57 |    13.89x
+  (2, 8, 3) |    39 |    14 |     6.02x
+  (2, 9, 3) |   129 |    40 |     5.06x
+  (2, 10, 3) |   184 |    51 |     4.51x
+  (2, 11, 3) |    32 |     7 |     3.89x
+
+Effect size (median entropy REAL - NULL): -0.238 | 95% CI [-0.255, -0.226]
+Effect size (median leakage REAL - NULL): 0.090 | 95% CI [0.086, 0.096]
+
+=== Across-batch replication diagnostics ===
+Top-K overlap across batches (REAL):
+  batches 0 vs 1: overlap=13 | jaccard=0.591
+  batches 0 vs 2: overlap=14 | jaccard=0.824
+  batches 1 vs 2: overlap=13 | jaccard=0.619
+
+Top-K overlap across batches (NULL):
+  batches 0 vs 1: overlap=12 | jaccard=0.923
+  batches 0 vs 2: overlap=12 | jaccard=0.923
+  batches 1 vs 2: overlap=12 | jaccard=0.857
+
+=== Notes ===
+1) If you still get 'no eligible families', coarsen bins further (ent_step=0.35-0.50, leak_step=0.15-0.25) or raise stable_frac to 0.10.
+2) If effect sizes are stable but overlaps remain low, the effect is population-level but not concentrated into a small set of coarse families under this key definition.
+3) If overlaps become stable, you can tighten bins again to localize the families more precisely.
+
+=== End ===

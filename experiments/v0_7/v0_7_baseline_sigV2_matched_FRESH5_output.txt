@@ -1,0 +1,87 @@
+=== v0_7 SigV2: Baseline / Null-Model Calibration (Matched) ===
+Qubits: 3 (d=8) | terms=5 | seeds=5000
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.250 | ent_step=0.100 | leak_step=0.050
+Evidence: stable_frac=0.01 | topK=50 | bootstrap=200
+Models: REAL + NULL_HAAR_BASIS (spectrum-matched)
+Output: C:\Users\tomst\PycharmProjects\qubits_1\venv\v0_6.2\v0_7_baseline_sigV2_matched_FRESH5_output.txt
+
+Model: REAL | candidates=10840 | elapsed=3.7s
+Model: NULL_HAAR_BASIS | candidates=11069 | elapsed=3.9s
+
+----------------------------------------------
+Model: REAL
+candidates=10840 | score(mean/median/max)=0.147/0.126/0.997 | leakage(mean/median/min)=0.400/0.421/0.000 | dom_count(median)=2
+
+Top signature families (stable-set vs overall):
+Format: sig=(dom, ent_bin_i, ent_bin_j, leak_bin) | overall | stable | enrichment
+  (2, 3, 3, 0) |    17 |    17 |  99.45x
+  (2, 4, 4, 0) |    13 |    13 |  99.45x
+  (2, 7, 7, 0) |    12 |    12 |  99.45x
+  (2, 5, 5, 0) |     8 |     8 |  99.45x
+  (2, 5, 5, 1) |     8 |     8 |  99.45x
+  (2, 6, 6, 0) |     6 |     6 |  99.45x
+  (2, 6, 6, 2) |     3 |     3 |  99.45x
+  (2, 1, 1, 0) |     3 |     3 |  99.45x
+  (2, 0, 0, 0) |     3 |     3 |  99.45x
+  (2, 5, 5, 3) |     2 |     2 |  99.45x
+  (2, 2, 2, 0) |     2 |     2 |  99.45x
+  (2, 4, 4, 1) |     2 |     2 |  99.45x
+  (2, 2, 9, 1) |     1 |     1 |  99.45x
+  (2, 7, 6, 1) |     1 |     1 |  99.45x
+  (2, 4, 3, 2) |     1 |     1 |  99.45x
+  ... (50 total in topK=50, truncated display)
+
+Bootstrap CI for enrichment (top signatures):
+  (2, 3, 3, 0) | mean= 98.81x | 95% CI [ 95.93x,  99.45x]
+  (2, 4, 4, 0) | mean= 98.81x | 95% CI [ 95.93x,  99.45x]
+  (2, 7, 7, 0) | mean= 98.81x | 95% CI [ 95.93x,  99.45x]
+  (2, 5, 5, 0) | mean= 98.31x | 95% CI [ 95.93x,  99.45x]
+  (2, 5, 5, 1) | mean= 98.81x | 95% CI [ 95.93x,  99.45x]
+  (2, 6, 6, 0) | mean= 98.81x | 95% CI [ 95.93x,  99.45x]
+  (2, 6, 6, 2) | mean= 89.49x | 95% CI [  0.00x,  99.45x]
+  (2, 1, 1, 0) | mean= 93.39x | 95% CI [  0.00x,  99.45x]
+  (2, 0, 0, 0) | mean= 94.85x | 95% CI [  0.00x,  99.45x]
+  (2, 5, 5, 3) | mean= 81.54x | 95% CI [  0.00x,  99.45x]
+----------------------------------------------
+Model: NULL_HAAR_BASIS
+candidates=11069 | score(mean/median/max)=0.130/0.124/0.346 | leakage(mean/median/min)=0.498/0.516/0.007 | dom_count(median)=2
+
+Top signature families (stable-set vs overall):
+Format: sig=(dom, ent_bin_i, ent_bin_j, leak_bin) | overall | stable | enrichment
+  (2, 25, 25, 2) |     3 |     3 |  99.72x
+  (2, 20, 27, 3) |     3 |     3 |  99.72x
+  (2, 27, 26, 2) |     2 |     2 |  99.72x
+  (2, 25, 20, 4) |     2 |     2 |  99.72x
+  (2, 24, 23, 3) |     2 |     2 |  99.72x
+  (2, 19, 25, 2) |     2 |     2 |  99.72x
+  (2, 24, 28, 2) |     2 |     2 |  99.72x
+  (2, 24, 27, 2) |     2 |     2 |  99.72x
+  (2, 25, 26, 1) |     2 |     2 |  99.72x
+  (2, 20, 24, 3) |     2 |     2 |  99.72x
+  (2, 23, 28, 1) |     2 |     2 |  99.72x
+  (2, 27, 27, 1) |     2 |     2 |  99.72x
+  (2, 26, 13, 3) |     1 |     1 |  99.72x
+  (2, 27, 26, 1) |     1 |     1 |  99.72x
+  (2, 24, 21, 3) |     1 |     1 |  99.72x
+  ... (50 total in topK=50, truncated display)
+
+Bootstrap CI for enrichment (top signatures):
+  (2, 25, 25, 2) | mean= 95.88x | 95% CI [  0.00x,  99.72x]
+  (2, 20, 27, 3) | mean= 81.13x | 95% CI [  0.00x,  99.72x]
+  (2, 27, 26, 2) | mean= 85.46x | 95% CI [  0.00x,  99.72x]
+  (2, 25, 20, 4) | mean= 70.82x | 95% CI [  0.00x,  99.72x]
+  (2, 24, 23, 3) | mean= 87.45x | 95% CI [  0.00x,  99.72x]
+  (2, 19, 25, 2) | mean= 83.96x | 95% CI [  0.00x,  99.72x]
+  (2, 24, 28, 2) | mean= 86.43x | 95% CI [  0.00x,  99.72x]
+  (2, 24, 27, 2) | mean= 83.54x | 95% CI [  0.00x,  99.72x]
+  (2, 25, 26, 1) | mean= 83.45x | 95% CI [  0.00x,  99.72x]
+  (2, 20, 24, 3) | mean= 85.97x | 95% CI [  0.00x,  99.72x]
+
+----------------------------------------------
+Hold-out replication (REAL):
+  Mean enrichment of topK(A) signatures evaluated in B: 11.62x
+  Jaccard overlap of topK(A) vs topK(B): 0.149
+
+=== End of v0_7 ===
+Total elapsed: 13.7s

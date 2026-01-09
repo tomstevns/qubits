@@ -1,0 +1,359 @@
+=== v0_7: Convergence + Baseline Calibration (v13) ===
+Qubits: 3 (d=8) | terms=5
+Batches: 3 × 5000 seeds (base_seed=0, stride=1000000)
+Neighbor eps=0.050
+Dominant set: keep_mass=0.90 (mass-based; guarantees non-empty mask)
+Bins (SigAbs): ent_step=0.100 | leak_step=0.050
+Bins (SigQ_GLOBAL fine): q_bins=10 (pooled REAL+NULL per batch)
+Bins (SigQG_COARSE): q_bins_coarse=6 + dom_bin + leak_bin_coarse (pooled REAL+NULL per batch)
+Leakage proxy times=[0.5, 1.0, 1.5] (FAST analytic evolution in eigenpair)
+Stable selection: stable_frac=0.010 with optional leak constraint (max=None, q=None)
+TopK=25 | min_overall=3 | min_stable=3 | alpha=0.5
+Optional family filter: p_tail_max=None
+Paired NN fallback: False (weights dom/e1/e2/leak = 2.0/1.0/1.0/1.0)
+
+
+----------------------------------------------
+Batch 1/3 (seed_offset=0)
+Model: REAL | candidates=10629 | stable_rate=0.0101 (score-only ref=0.0101)
+  score(mean/median/max)=0.475/0.467/0.691
+  leakage(mean/median/min)=0.058/0.064/0.000
+  entropy(mean/median/max)=2.172/2.253/3.000
+  dom_count(mean/median/max)=5.48/6.0/8
+  entropy effect (stable-overall)=-0.016 bits  CI95=(-0.129806011682675, 0.0812826826026602)
+
+Top signature families (REAL, SigQ_GLOBAL (fine)):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (2, 2, 2, 0) |    54 |    41 |    0.54 | 1.28e-70 |     69.89 |   2948.93x
+  (2, 1, 1, 0) |    41 |    30 |    0.41 | 3.46e-51 |     50.46 |   2846.19x
+  (2, 0, 0, 0) |    37 |    14 |    0.37 | 5.40e-19 |     18.27 |   1497.44x
+  (2, 1, 2, 0) |     7 |     7 |    0.07 | 1.05e-14 |     13.98 |   3872.69x
+  (1, 0, 0, 1) |     7 |     7 |    0.07 | 1.05e-14 |     13.98 |   3872.69x
+  (1, 0, 0, 0) |     4 |     4 |    0.04 | 1.03e-08 |      7.99 |   3872.69x
+  (2, 0, 1, 0) |     7 |     4 |    0.07 | 3.51e-07 |      6.45 |   2323.61x
+
+Top signature families (REAL, SigQG_COARSE):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (0, 1, 1, 0) |    85 |    59 |    0.86 | 5.76e-97 |     96.24 |   4687.38x
+  (0, 0, 0, 0) |    65 |    37 |    0.65 | 1.91e-56 |     55.72 |   3856.28x
+  (0, 0, 1, 0) |     4 |     4 |    0.04 | 1.03e-08 |      7.99 |   6735.64x
+  (0, 0, 0, 1) |    66 |     7 |    0.66 | 4.85e-06 |      5.31 |    759.66x
+
+Model: NULL_HAAR_BASIS | candidates=10629 | stable_rate=0.0101 (score-only ref=0.0101)
+  score(mean/median/max)=0.469/0.467/0.575
+  leakage(mean/median/min)=0.068/0.069/0.002
+  entropy(mean/median/max)=2.454/2.484/2.984
+  dom_count(mean/median/max)=5.35/5.0/7
+  entropy effect (stable-overall)=+0.008 bits  CI95=(-0.030110192253830992, 0.03138593474546672)
+
+Top signature families (NULL, SigQ_GLOBAL (fine)):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (3, 7, 8, 1) |     6 |     6 |    0.06 | 1.04e-12 |     11.98 |   3137.76x
+  (3, 5, 8, 1) |     7 |     6 |    0.07 | 7.22e-12 |     11.14 |   2719.39x
+  (3, 3, 4, 1) |     5 |     5 |    0.05 | 1.03e-10 |      9.99 |   3137.76x
+  (3, 1, 3, 1) |     4 |     4 |    0.04 | 1.03e-08 |      7.99 |   3137.76x
+  (3, 5, 7, 1) |     4 |     4 |    0.04 | 1.03e-08 |      7.99 |   3137.76x
+  (3, 3, 5, 1) |     6 |     4 |    0.06 | 1.52e-07 |      6.82 |   2172.30x
+  (3, 2, 9, 1) |     3 |     3 |    0.03 | 1.02e-06 |      5.99 |   3137.76x
+  (3, 1, 6, 1) |     3 |     3 |    0.03 | 1.02e-06 |      5.99 |   3137.76x
+  (3, 4, 5, 1) |     3 |     3 |    0.03 | 1.02e-06 |      5.99 |   3137.76x
+  (3, 2, 4, 1) |     3 |     3 |    0.03 | 1.02e-06 |      5.99 |   3137.76x
+  ... (15 total, showing 10)
+
+Top signature families (NULL, SigQG_COARSE):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (1, 3, 4, 1) |   117 |     9 |    1.18 | 3.30e-06 |      5.48 |    536.20x
+  (1, 4, 4, 1) |    67 |     7 |    0.67 | 5.37e-06 |      5.27 |    736.88x
+  (1, 1, 1, 1) |    31 |     5 |    0.31 | 1.41e-05 |      4.85 |   1157.96x
+  (1, 2, 2, 1) |    56 |     6 |    0.56 | 2.20e-05 |      4.66 |    762.97x
+  (1, 1, 3, 1) |    92 |     7 |    0.93 | 4.35e-05 |      4.36 |    537.73x
+  (1, 3, 5, 1) |    97 |     7 |    0.98 | 6.10e-05 |      4.21 |    510.15x
+  (1, 1, 2, 1) |    75 |     6 |    0.76 | 1.16e-04 |      3.94 |    570.96x
+  (1, 2, 3, 1) |   117 |     7 |    1.18 | 1.98e-04 |      3.70 |    423.32x
+  (1, 1, 5, 1) |    55 |     5 |    0.55 | 2.37e-04 |      3.63 |    657.22x
+  (1, 1, 4, 1) |    63 |     5 |    0.63 | 4.47e-04 |      3.35 |    574.42x
+  ... (14 total, showing 10)
+
+Batch 1: Jaccard(Top-25) REAL vs NULL: fine(SigQ_GLOBAL)=0.000 | coarse(SigQG_COARSE)=0.000
+
+Paired view: REAL fine Top families scored under NULL fine
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(2, 2, 2, 0) | (54,41) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 1, 1, 0) | (41,30) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 0, 0, 0) | (37,14) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 1, 2, 0) | (7,7) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 0, 1) | (7,7) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 0, 0) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 0, 1, 0) | (7,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: NULL fine Top families scored under REAL fine
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(3, 7, 8, 1) | (6,6) | (3,0) |    0.03 | 1.00e+00 |     -0.00 | None |    inf
+(3, 5, 8, 1) | (7,6) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+(3, 3, 4, 1) | (5,5) | (7,0) |    0.07 | 1.00e+00 |     -0.00 | None |    inf
+(3, 1, 3, 1) | (4,4) | (1,0) |    0.01 | 1.00e+00 |     -0.00 | None |    inf
+(3, 5, 7, 1) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 3, 5, 1) | (6,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 2, 9, 1) | (3,3) | (4,0) |    0.04 | 1.00e+00 |     -0.00 | None |    inf
+(3, 1, 6, 1) | (3,3) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 4, 5, 1) | (3,3) | (1,0) |    0.01 | 1.00e+00 |     -0.00 | None |    inf
+(3, 2, 4, 1) | (3,3) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: REAL coarse Top families scored under NULL coarse
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(0, 1, 1, 0) | (85,59) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(0, 0, 0, 0) | (65,37) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(0, 0, 1, 0) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(0, 0, 0, 1) | (66,7) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: NULL coarse Top families scored under REAL coarse
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(1, 3, 4, 1) | (117,9) | (9,0) |    0.09 | 1.00e+00 |     -0.00 | None |    inf
+(1, 4, 4, 1) | (67,7) | (80,0) |    0.81 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 1, 1) | (31,5) | (141,0) |    1.42 | 1.00e+00 |     -0.00 | None |    inf
+(1, 2, 2, 1) | (56,6) | (80,0) |    0.81 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 3, 1) | (92,7) | (1,0) |    0.01 | 1.00e+00 |     -0.00 | None |    inf
+(1, 3, 5, 1) | (97,7) | (9,0) |    0.09 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 2, 1) | (75,6) | (4,0) |    0.04 | 1.00e+00 |     -0.00 | None |    inf
+(1, 2, 3, 1) | (117,7) | (6,0) |    0.06 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 5, 1) | (55,5) | (10,0) |    0.10 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 4, 1) | (63,5) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+
+Baseline scoreboard (REAL - NULL):
+  delta median entropy (bits): -0.232
+  delta median leakage       : -0.005
+  delta median dom_count     : +1.000
+  entropy Cohen's d          : -0.707
+
+----------------------------------------------
+Batch 2/3 (seed_offset=1000000)
+Model: REAL | candidates=10648 | stable_rate=0.0100 (score-only ref=0.0100)
+  score(mean/median/max)=0.475/0.467/0.700
+  leakage(mean/median/min)=0.058/0.064/0.000
+  entropy(mean/median/max)=2.161/2.242/3.000
+  dom_count(mean/median/max)=5.46/6.0/8
+  entropy effect (stable-overall)=+0.092 bits  CI95=(-0.04368270897394076, 0.19028536264972729)
+
+Top signature families (REAL, SigQ_GLOBAL (fine)):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (2, 1, 1, 0) |    54 |    40 |    0.54 | 3.44e-68 |     67.46 |   2924.10x
+  (2, 0, 0, 0) |    37 |    23 |    0.37 | 5.97e-37 |     36.22 |   2465.87x
+  (2, 2, 2, 0) |    40 |    19 |    0.40 | 1.18e-27 |     26.93 |   1894.58x
+  (1, 0, 0, 0) |    13 |    13 |    0.13 | 1.07e-26 |     25.97 |   3934.90x
+  (1, 0, 0, 1) |     7 |     7 |    0.07 | 1.03e-14 |     13.99 |   3934.90x
+
+Top signature families (REAL, SigQG_COARSE):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (0, 0, 0, 0) |    73 |    51 |    0.73 | 2.64e-84 |     83.58 |   4842.44x
+  (0, 1, 1, 0) |    85 |    45 |    0.85 | 2.42e-66 |     65.62 |   3677.81x
+  (0, 0, 1, 0) |     4 |     4 |    0.04 | 1.02e-08 |      7.99 |   6911.05x
+  (0, 0, 0, 1) |    70 |     7 |    0.70 | 7.13e-06 |      5.15 |    735.22x
+
+Model: NULL_HAAR_BASIS | candidates=10648 | stable_rate=0.0100 (score-only ref=0.0100)
+  score(mean/median/max)=0.469/0.467/0.586
+  leakage(mean/median/min)=0.068/0.069/0.001
+  entropy(mean/median/max)=2.451/2.484/2.978
+  dom_count(mean/median/max)=5.35/5.0/7
+  entropy effect (stable-overall)=-0.001 bits  CI95=(-0.03408946506419278, 0.02886320326276927)
+
+Top signature families (NULL, SigQ_GLOBAL (fine)):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (3, 5, 6, 1) |     7 |     7 |    0.07 | 1.03e-14 |     13.99 |   3235.47x
+  (3, 2, 5, 1) |     6 |     6 |    0.06 | 1.03e-12 |     11.99 |   3235.47x
+  (3, 4, 5, 1) |     6 |     6 |    0.06 | 1.03e-12 |     11.99 |   3235.47x
+  (3, 6, 8, 1) |     4 |     4 |    0.04 | 1.02e-08 |      7.99 |   3235.47x
+  (3, 3, 5, 1) |     4 |     4 |    0.04 | 1.02e-08 |      7.99 |   3235.47x
+  (3, 3, 7, 1) |     4 |     4 |    0.04 | 1.02e-08 |      7.99 |   3235.47x
+  (3, 7, 7, 1) |     4 |     4 |    0.04 | 1.02e-08 |      7.99 |   3235.47x
+  (3, 2, 7, 1) |     4 |     4 |    0.04 | 1.02e-08 |      7.99 |   3235.47x
+  (3, 3, 4, 1) |     3 |     3 |    0.03 | 1.01e-06 |      5.99 |   3235.47x
+  (3, 3, 8, 1) |     3 |     3 |    0.03 | 1.01e-06 |      5.99 |   3235.47x
+  ... (16 total, showing 10)
+
+Top signature families (NULL, SigQG_COARSE):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (1, 2, 3, 1) |    94 |    12 |    0.94 | 2.36e-10 |      9.63 |    877.67x
+  (1, 1, 4, 1) |    64 |    10 |    0.64 | 9.70e-10 |      9.01 |   1080.15x
+  (1, 4, 4, 1) |    60 |     9 |    0.60 | 9.73e-09 |      8.01 |   1041.89x
+  (1, 1, 3, 1) |    86 |     9 |    0.86 | 2.39e-07 |      6.62 |    728.72x
+  (1, 1, 2, 1) |    84 |     8 |    0.84 | 2.30e-06 |      5.64 |    667.45x
+  (1, 1, 5, 1) |    60 |     6 |    0.60 | 3.24e-05 |      4.49 |    712.87x
+  (1, 2, 5, 1) |    97 |     7 |    0.97 | 6.03e-05 |      4.22 |    510.40x
+  (1, 2, 4, 1) |   122 |     7 |    1.23 | 2.53e-04 |      3.60 |    406.24x
+  (1, 3, 3, 1) |    59 |     5 |    0.59 | 3.27e-04 |      3.49 |    613.34x
+  (1, 3, 4, 1) |   106 |     6 |    1.07 | 7.46e-04 |      3.13 |    404.97x
+  ... (12 total, showing 10)
+
+Batch 2: Jaccard(Top-25) REAL vs NULL: fine(SigQ_GLOBAL)=0.000 | coarse(SigQG_COARSE)=0.000
+
+Paired view: REAL fine Top families scored under NULL fine
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(2, 1, 1, 0) | (54,40) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 0, 0, 0) | (37,23) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 2, 2, 0) | (40,19) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 0, 0) | (13,13) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 0, 1) | (7,7) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: NULL fine Top families scored under REAL fine
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(3, 5, 6, 1) | (7,7) | (8,0) |    0.08 | 1.00e+00 |     -0.00 | None |    inf
+(3, 2, 5, 1) | (6,6) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 4, 5, 1) | (6,6) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 6, 8, 1) | (4,4) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+(3, 3, 5, 1) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 3, 7, 1) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 7, 7, 1) | (4,4) | (19,0) |    0.19 | 1.00e+00 |     -0.00 | None |    inf
+(3, 2, 7, 1) | (4,4) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+(3, 3, 4, 1) | (3,3) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+(3, 3, 8, 1) | (3,3) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: REAL coarse Top families scored under NULL coarse
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(0, 0, 0, 0) | (73,51) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(0, 1, 1, 0) | (85,45) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(0, 0, 1, 0) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(0, 0, 0, 1) | (70,7) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: NULL coarse Top families scored under REAL coarse
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(1, 2, 3, 1) | (94,12) | (5,0) |    0.05 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 4, 1) | (64,10) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+(1, 4, 4, 1) | (60,9) | (76,0) |    0.76 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 3, 1) | (86,9) | (4,0) |    0.04 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 2, 1) | (84,8) | (5,0) |    0.05 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 5, 1) | (60,6) | (16,0) |    0.16 | 1.00e+00 |     -0.00 | None |    inf
+(1, 2, 5, 1) | (97,7) | (6,0) |    0.06 | 1.00e+00 |     -0.00 | None |    inf
+(1, 2, 4, 1) | (122,7) | (4,0) |    0.04 | 1.00e+00 |     -0.00 | None |    inf
+(1, 3, 3, 1) | (59,5) | (72,0) |    0.72 | 1.00e+00 |     -0.00 | None |    inf
+(1, 3, 4, 1) | (106,6) | (22,0) |    0.22 | 1.00e+00 |     -0.00 | None |    inf
+
+Baseline scoreboard (REAL - NULL):
+  delta median entropy (bits): -0.242
+  delta median leakage       : -0.005
+  delta median dom_count     : +1.000
+  entropy Cohen's d          : -0.732
+
+----------------------------------------------
+Batch 3/3 (seed_offset=2000000)
+Model: REAL | candidates=10802 | stable_rate=0.0101 (score-only ref=0.0101)
+  score(mean/median/max)=0.476/0.467/0.697
+  leakage(mean/median/min)=0.059/0.064/0.000
+  entropy(mean/median/max)=2.132/2.210/3.000
+  dom_count(mean/median/max)=5.44/6.0/8
+  entropy effect (stable-overall)=+0.029 bits  CI95=(-0.0948876811081001, 0.11740273359429981)
+
+Top signature families (REAL, SigQ_GLOBAL (fine)):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (2, 2, 2, 0) |    61 |    41 |    0.62 | 7.41e-67 |     66.13 |   2700.66x
+  (2, 0, 0, 0) |    41 |    23 |    0.41 | 2.09e-35 |     34.68 |   2266.29x
+  (1, 0, 0, 1) |    14 |    14 |    0.14 | 1.13e-28 |     27.95 |   4002.18x
+  (2, 1, 1, 0) |    33 |    17 |    0.33 | 1.17e-25 |     24.93 |   2090.69x
+  (1, 0, 0, 0) |     8 |     8 |    0.08 | 1.07e-16 |     15.97 |   4002.18x
+  (2, 1, 2, 0) |    10 |     4 |    0.10 | 2.07e-06 |      5.68 |   1715.22x
+
+Top signature families (REAL, SigQG_COARSE):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (0, 1, 1, 0) |    85 |    57 |    0.86 | 2.89e-92 |     91.54 |   4649.63x
+  (0, 0, 0, 0) |    67 |    38 |    0.68 | 8.35e-58 |     57.08 |   3943.43x
+  (0, 0, 0, 1) |    97 |    14 |    0.98 | 1.45e-12 |     11.84 |   1028.21x
+
+Model: NULL_HAAR_BASIS | candidates=10802 | stable_rate=0.0101 (score-only ref=0.0101)
+  score(mean/median/max)=0.469/0.467/0.564
+  leakage(mean/median/min)=0.068/0.069/0.000
+  entropy(mean/median/max)=2.449/2.480/2.970
+  dom_count(mean/median/max)=5.34/5.0/7
+  entropy effect (stable-overall)=-0.032 bits  CI95=(-0.053696934992010746, 0.015481791179776659)
+
+Top signature families (NULL, SigQ_GLOBAL (fine)):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (3, 6, 7, 1) |     7 |     6 |    0.07 | 7.33e-12 |     11.14 |   2827.36x
+  (3, 4, 4, 1) |     5 |     5 |    0.05 | 1.05e-10 |      9.98 |   3262.34x
+  (3, 5, 8, 1) |     5 |     5 |    0.05 | 1.05e-10 |      9.98 |   3262.34x
+  (3, 3, 8, 1) |     6 |     5 |    0.06 | 6.22e-10 |      9.21 |   2760.44x
+  (3, 4, 5, 1) |     7 |     5 |    0.07 | 2.16e-09 |      8.67 |   2392.38x
+  (3, 2, 4, 1) |     4 |     4 |    0.04 | 1.04e-08 |      7.98 |   3262.34x
+  (3, 1, 5, 1) |     4 |     4 |    0.04 | 1.04e-08 |      7.98 |   3262.34x
+  (3, 1, 6, 1) |     4 |     4 |    0.04 | 1.04e-08 |      7.98 |   3262.34x
+  (3, 3, 4, 1) |     5 |     4 |    0.05 | 5.14e-08 |      7.29 |   2669.19x
+  (3, 8, 8, 1) |     3 |     3 |    0.03 | 1.03e-06 |      5.99 |   3262.34x
+  ... (18 total, showing 10)
+
+Top signature families (NULL, SigQG_COARSE):
+Format: sig=(a,b,c,d) | overall | stable | expected | p_tail | -log10(p) | enrichment
+  (1, 3, 4, 1) |   113 |    15 |    1.14 | 8.18e-13 |     12.09 |    932.36x
+  (1, 1, 4, 1) |    82 |    10 |    0.83 | 1.21e-08 |      7.92 |    868.92x
+  (1, 2, 2, 1) |    60 |     8 |    0.61 | 1.72e-07 |      6.76 |    959.20x
+  (1, 0, 3, 1) |    23 |     5 |    0.23 | 3.02e-06 |      5.52 |   1597.87x
+  (1, 2, 3, 1) |   106 |     8 |    1.07 | 1.35e-05 |      4.87 |    544.90x
+  (1, 2, 5, 1) |   112 |     8 |    1.13 | 2.01e-05 |      4.70 |    515.84x
+  (1, 1, 2, 1) |    83 |     7 |    0.84 | 2.26e-05 |      4.65 |    613.23x
+  (1, 1, 3, 1) |    93 |     7 |    0.94 | 4.73e-05 |      4.33 |    547.64x
+  (1, 0, 2, 1) |    24 |     4 |    0.24 | 9.37e-05 |      4.03 |   1253.99x
+  (1, 0, 4, 1) |    32 |     4 |    0.32 | 2.97e-04 |      3.53 |    945.31x
+  ... (14 total, showing 10)
+
+Batch 3: Jaccard(Top-25) REAL vs NULL: fine(SigQ_GLOBAL)=0.000 | coarse(SigQG_COARSE)=0.000
+
+Paired view: REAL fine Top families scored under NULL fine
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(2, 2, 2, 0) | (61,41) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 0, 0, 0) | (41,23) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 0, 1) | (14,14) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 1, 1, 0) | (33,17) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 0, 0) | (8,8) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(2, 1, 2, 0) | (10,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: NULL fine Top families scored under REAL fine
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(3, 6, 7, 1) | (7,6) | (12,0) |    0.12 | 1.00e+00 |     -0.00 | None |    inf
+(3, 4, 4, 1) | (5,5) | (14,0) |    0.14 | 1.00e+00 |     -0.00 | None |    inf
+(3, 5, 8, 1) | (5,5) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 3, 8, 1) | (6,5) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 4, 5, 1) | (7,5) | (4,0) |    0.04 | 1.00e+00 |     -0.00 | None |    inf
+(3, 2, 4, 1) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 1, 5, 1) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 1, 6, 1) | (4,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(3, 3, 4, 1) | (5,4) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+(3, 8, 8, 1) | (3,3) | (18,0) |    0.18 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: REAL coarse Top families scored under NULL coarse
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(0, 1, 1, 0) | (85,57) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(0, 0, 0, 0) | (67,38) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(0, 0, 0, 1) | (97,14) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+
+Paired view: NULL coarse Top families scored under REAL coarse
+sig | src(o,s) | dst(o,s) | dst expected | dst p_tail | dst -log10(p) | nn_sig | nn_dist
+(1, 3, 4, 1) | (113,15) | (12,0) |    0.12 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 4, 1) | (82,10) | (4,0) |    0.04 | 1.00e+00 |     -0.00 | None |    inf
+(1, 2, 2, 1) | (60,8) | (74,0) |    0.75 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 3, 1) | (23,5) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+(1, 2, 3, 1) | (106,8) | (7,0) |    0.07 | 1.00e+00 |     -0.00 | None |    inf
+(1, 2, 5, 1) | (112,8) | (13,0) |    0.13 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 2, 1) | (83,7) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+(1, 1, 3, 1) | (93,7) | (2,0) |    0.02 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 2, 1) | (24,4) | (8,0) |    0.08 | 1.00e+00 |     -0.00 | None |    inf
+(1, 0, 4, 1) | (32,4) | (0,0) |    0.00 | 1.00e+00 |     -0.00 | None |    inf
+
+Baseline scoreboard (REAL - NULL):
+  delta median entropy (bits): -0.270
+  delta median leakage       : -0.004
+  delta median dom_count     : +1.000
+  entropy Cohen's d          : -0.786
+
+----------------------------------------------
+=== Convergence diagnostics (REAL) ===
+REAL overlap fine:   Jaccard(Top-25) batch1 vs batch2 = 0.714
+REAL overlap coarse: Jaccard(Top-25) batch1 vs batch2 = 1.000
+REAL overlap fine:   Jaccard(Top-25) batch1 vs batch3 = 0.857
+REAL overlap coarse: Jaccard(Top-25) batch1 vs batch3 = 0.750
+REAL overlap fine:   Jaccard(Top-25) batch2 vs batch3 = 0.833
+REAL overlap coarse: Jaccard(Top-25) batch2 vs batch3 = 0.750
+
+=== Notes (scientific reading) ===
+1) Use fine families for within-model discovery; use coarse + NN paired views for cross-model interpretability.
+2) If fine cross-model overlap is ~0 but coarse overlap is >0, the signal is likely present but too sparse under fine hashing.
+3) If both fine and coarse overlaps are ~0, REAL and NULL are genuinely separated under current features / generator.
+4) Consider tightening stable via --stable_leak_max (e.g., 0.05) or --stable_leak_quantile (e.g., 0.25) if stable sets look noisy.
+
+=== End of v13 ===

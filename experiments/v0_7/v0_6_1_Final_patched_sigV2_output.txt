@@ -1,0 +1,48 @@
+=== v0_6.1 SigV2: Evidence Hygiene for Signature Families ===
+Qubits: 3 (d=8) | terms=5 | seeds=50000 | t=1.0
+Nominal: prob_threshold=0.25, epsilon=0.05, ent_bin=0.10, leak_bin=0.05
+Family: ent_step=0.10, leak_step=0.05 | min_support=50 | topK=50
+Output: C:\Users\tomst\PycharmProjects\qubits_1\venv\v0_6.2\v0_6_1_Final_patched_sigV2_output.txt
+
+=== 1) Enrichment (family-based) + Bootstrap CI ===
+
+Retained candidates: 78011
+Score(mean/median/max)=0.321/0.196/1.000
+Leakage_raw(mean/median/min)=0.456/0.451/0.000
+dom_count(min/median/max)=1/4/7 (d=8)
+dom_count distribution:
+  dom_count=1: 3.8% (n=2971)
+  dom_count=2: 28.7% (n=22389)
+  dom_count=3: 2.0% (n=1546)
+  dom_count=4: 64.9% (n=50649)
+  dom_count=5: 0.2% (n=121)
+  dom_count=6: 0.4% (n=289)
+  dom_count=7: 0.1% (n=46)
+
+Stable set = top 1% by score
+  fam=(4, 9, 9, 0)  point=33.19x  stable_rate=0.371  stable=65  overall=175  |  bootstrap=33.31x, CI95% [26.93, 39.40]
+  fam=(4, 15, 15, 0)  point=20.49x  stable_rate=0.229  stable=116  overall=506  |  bootstrap=20.48x, CI95% [17.60, 23.53]
+  fam=(4, 10, 10, 0)  point=18.88x  stable_rate=0.211  stable=176  overall=833  |  bootstrap=18.83x, CI95% [16.45, 21.42]
+  fam=(4, 20, 20, 0)  point=18.64x  stable_rate=0.209  stable=78  overall=374  |  bootstrap=18.48x, CI95% [14.63, 22.14]
+  fam=(4, 13, 13, 0)  point=15.41x  stable_rate=0.172  stable=60  overall=348  |  bootstrap=15.51x, CI95% [12.44, 18.96]
+
+Stable set = top 5% by score
+  fam=(4, 9, 9, 0)  point=19.08x  stable_rate=0.954  stable=167  overall=175  |  bootstrap=19.10x, CI95% [18.49, 19.63]
+  fam=(4, 10, 10, 0)  point=18.17x  stable_rate=0.909  stable=757  overall=833  |  bootstrap=18.19x, CI95% [17.81, 18.58]
+  fam=(4, 15, 15, 0)  point=16.72x  stable_rate=0.836  stable=423  overall=506  |  bootstrap=16.67x, CI95% [15.98, 17.35]
+  fam=(4, 14, 14, 0)  point=15.46x  stable_rate=0.773  stable=245  overall=317  |  bootstrap=15.24x, CI95% [13.94, 16.20]
+  fam=(4, 20, 20, 0)  point=14.44x  stable_rate=0.722  stable=270  overall=374  |  bootstrap=14.35x, CI95% [13.43, 15.27]
+
+=== 2) Hold-out Replication (family-based) ===
+Hold-out overlap on supported family keys: Jaccard=0.695 (inter=41, union=59)
+
+=== 3) Compact Results Block (paste-ready) ===
+  stable_set=1% | fam=(4, 9, 9, 0) | enrichment=33.19x | stable_rate=0.371 | stable=65 | overall=175
+  stable_set=1% | fam=(4, 15, 15, 0) | enrichment=20.49x | stable_rate=0.229 | stable=116 | overall=506
+  stable_set=1% | fam=(4, 10, 10, 0) | enrichment=18.88x | stable_rate=0.211 | stable=176 | overall=833
+  stable_set=5% | fam=(4, 9, 9, 0) | enrichment=19.08x | stable_rate=0.954 | stable=167 | overall=175
+  stable_set=5% | fam=(4, 10, 10, 0) | enrichment=18.17x | stable_rate=0.909 | stable=757 | overall=833
+  stable_set=5% | fam=(4, 15, 15, 0) | enrichment=16.72x | stable_rate=0.836 | stable=423 | overall=506
+  holdout_topK=50 | Jaccard=0.695 | inter=41 | union=59
+
+=== End of v0_6.1 SigV2 ===

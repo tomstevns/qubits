@@ -1,0 +1,78 @@
+=== v0_7: Convergence + Baseline Calibration (v9) ===
+Qubits: 3 (d=8) | terms=5
+Batches: 3 | seeds_per_batch=5000 | stable_frac=0.010 | topK=25
+Near-degenerate neighbor eps=0.050
+Dominant threshold=0.250 | ent_step=0.100 | leak_step=0.050
+Leakage proxy: times=[0.5, 1.0, 1.5] | trotter_steps=8
+Enrichment smoothing alpha=0.50 | min_overall=10 | min_stable=3
+Bootstrap: batch_CI=500 | ratio_CI=200
+Output: v0_7_convergence_families_v9_output.txt
+
+Model: REAL           | batch=0 | seeds=5000 | candidates=11188 | elapsed=7.5s
+Model: NULL_HAAR_BASIS | batch=0 | seeds=5000 | candidates=10997 | elapsed=9.7s
+Model: REAL           | batch=1 | seeds=5000 | candidates=10901 | elapsed=7.3s
+Model: NULL_HAAR_BASIS | batch=1 | seeds=5000 | candidates=10990 | elapsed=9.9s
+Model: REAL           | batch=2 | seeds=5000 | candidates=11218 | elapsed=7.5s
+Model: NULL_HAAR_BASIS | batch=2 | seeds=5000 | candidates=11171 | elapsed=9.9s
+
+=== (1) Top-family stability across batches ===
+REAL: Top-25 sizes per batch = [3, 3, 3]
+REAL: pairwise Jaccard mean (non-empty pairs) = 0.667 | pairs_used=3 | intersection(all batches) = 2
+NULL: Top-25 sizes per batch = [0, 1, 1]
+NULL: pairwise Jaccard mean (non-empty pairs) = 1.000 | pairs_used=1 | intersection(all batches) = 0
+Note: If Top-K lists are very small (due to min-count filters), overlaps become less informative.
+
+REAL: Spearman(log enrichment) adjacent-batch mean = 0.829 (n=2)
+NULL: Spearman(log enrichment) adjacent-batch mean = 0.768 (n=2)
+
+
+=== (2) Distribution-level effects (REAL vs NULL) ===
+=== Distribution-level effect sizes (REAL - NULL) across batches ===
+Metric: median(entropy_bin_mean), median(leak_bin), median(dom_count)
+Point (median of batch diffs): ent=-2.00, leak=+0.00, dom=+0.00
+Bootstrap 95% CI (over batches): ent=[-2.00, -2.00]
+                           leak=[+0.00, +0.00]
+                            dom=[+0.00, +0.00]
+
+
+=== (3) Pooled top families per model (after smoothing + min-count filter) ===
+Pooled REAL Top families:
+Format: sig=(dom, ent_bin_lo, ent_bin_hi, leak_bin) | enrichment | overall | stable
+  (2, 1, 1, 0) |   99.28x |      13 |     13
+  (2, 3, 3, 1) |   99.28x |      12 |     12
+  (2, 4, 4, 0) |   99.28x |      11 |     11
+  (2, 4, 4, 1) |   99.28x |      11 |     11
+  (2, 0, 0, 0) |   99.28x |      26 |     26
+  (2, 2, 2, 0) |   99.28x |      16 |     16
+  (4, 8, 8, 0) |   96.70x |      38 |     37
+  (4, 9, 9, 0) |   78.69x |      67 |     53
+  (4, 9, 10, 0) |   59.57x |      12 |      7
+  (4, 10, 10, 0) |   10.87x |     333 |     36
+
+Pooled NULL Top families:
+Format: sig=(dom, ent_bin_lo, ent_bin_hi, leak_bin) | enrichment | overall | stable
+  (2, 23, 25, 0) |   73.99x |      15 |     11
+  (2, 22, 25, 0) |   73.71x |      11 |      8
+  (2, 24, 25, 0) |   68.23x |      28 |     19
+  (2, 23, 24, 0) |   65.04x |      11 |      7
+  (2, 26, 26, 0) |   65.04x |      11 |      7
+  (2, 23, 27, 0) |   61.73x |      10 |      6
+  (2, 24, 26, 0) |   59.83x |      12 |      7
+  (2, 25, 25, 0) |   59.83x |      12 |      7
+  (2, 25, 26, 0) |   58.81x |      19 |     11
+  (2, 23, 26, 0) |   51.86x |      12 |      6
+
+
+=== (4) Cross-model calibration on pooled Top families ===
+Interpretation: focus on families that are enriched in REAL AND present with adequate counts in NULL.
+Format: sig | enr_REAL | enr_NULL | ratio | ratio_CI_95 (bootstrap over batches)
+
+  (no cross-model families passed the support filters; increase seeds or relax min_* thresholds)
+
+=== Notes (scientific reading) ===
+1) Within-model enrichment has a saturation ceiling near 1/stable_frac when a family appears almost only inside the stable subset.
+   This is why cross-model calibration + support filters are essential.
+2) Convergence is supported when (a) Top-K overlap is non-trivial across batches and (b) distribution-level effects are stable.
+3) Cross-model ratios are only interpretable when the same family has non-trivial support in BOTH models; otherwise, ratios are dominated by sparsity.
+
+=== End of v0_7 (v9) ===

@@ -1,0 +1,247 @@
+=== v0_7: Convergence + Baseline Calibration (v10) ===
+Qubits: 3 (d=8) | terms=5
+Batches: 3 × 5000 seeds (base_seed=0, stride=1000000)
+Neighbor eps=0.050 | dom_threshold=0.250
+Bins (SigAbs): ent_step=0.100 | leak_step=0.050
+Bins (SigQ): q_bins=10 (entropy quantiles within batch+model)
+Leakage proxy times=[0.5, 1.0, 1.5] | stable_frac=0.010 | topK=25
+Cross-model key for overlap/calibration: SigQ
+
+Running REAL batches...
+
+Running NULL_HAAR_BASIS batches (spectrum-matched)...
+
+----------------------------------------------
+Batch 1/3
+Model: REAL | candidates=10629
+  score(mean/median/max)=0.531/0.600/0.691
+  leakage(mean/median/min)=0.732/1.000/0.000
+  entropy(mean/median/max)=2.172/2.253/3.000
+  dom_count(median)=0.0
+  entropy effect (stable-overall)=-0.138 bits  CI95=(-0.21714209571582804, -0.049481442147641226)
+
+Top signature families (REAL, SigAbs):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (1, 19, 19, 4) |     6 |     6 |  2215.16x
+  (1, 17, 17, 3) |     6 |     6 |  2215.16x
+  (1, 14, 14, 1) |     5 |     5 |  2215.16x
+  (1, 15, 15, 2) |     5 |     5 |  2215.16x
+  (1, 12, 18, 3) |     3 |     3 |  2215.16x
+  (1, 19, 20, 4) |     6 |     6 |  2215.16x
+  (1, 17, 17, 4) |     4 |     4 |  2215.16x
+  (0, 14, 14, 20) |    98 |     3 |    78.71x
+  (0, 17, 17, 20) |   184 |     5 |    66.03x
+  (0, 27, 27, 20) |   157 |     4 |    63.29x
+  ... (15 total, showing 10)
+
+Top signature families (REAL, SigQ):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (1, 3, 3, 4) |     3 |     3 |  3350.40x
+  (1, 0, 0, 1) |     7 |     7 |  3350.40x
+  (1, 1, 1, 3) |     7 |     7 |  3350.40x
+  (1, 1, 1, 4) |     4 |     4 |  3350.40x
+  (1, 2, 2, 4) |     4 |     4 |  3350.40x
+  (1, 0, 0, 0) |     4 |     4 |  3350.40x
+  (1, 0, 0, 2) |     4 |     4 |  3350.40x
+  (1, 0, 2, 3) |     3 |     3 |  3350.40x
+  (1, 0, 0, 4) |     3 |     3 |  3350.40x
+  (1, 2, 3, 4) |     8 |     8 |  3350.40x
+  ... (19 total, showing 10)
+
+Model: NULL_HAAR_BASIS | candidates=10850
+  score(mean/median/max)=0.471/0.450/0.621
+  leakage(mean/median/min)=0.620/0.634/0.067
+  entropy(mean/median/max)=2.452/2.485/2.985
+  dom_count(median)=1.0
+  entropy effect (stable-overall)=+0.009 bits  CI95=(-0.029542317252977145, 0.062448285141319684)
+
+Top signature families (NULL, SigAbs):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (0, 25, 27, 20) |    49 |     8 |   273.69x
+  (0, 22, 26, 20) |    45 |     6 |   227.69x
+  (0, 25, 25, 20) |    46 |     5 |   188.52x
+  (0, 22, 24, 20) |    40 |     4 |   177.09x
+  (0, 26, 26, 20) |    49 |     5 |   177.09x
+  (0, 24, 26, 20) |    77 |     8 |   174.81x
+  (0, 23, 27, 20) |    34 |     3 |   161.69x
+  (0, 25, 26, 20) |    94 |     9 |   160.23x
+  (0, 23, 26, 20) |    65 |     5 |   133.83x
+  (0, 24, 24, 20) |    49 |     3 |   112.70x
+  ... (14 total, showing 10)
+
+Top signature families (NULL, SigQ):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (0, 2, 8, 20) |    25 |     4 |   345.70x
+  (0, 6, 9, 20) |    32 |     5 |   331.52x
+  (0, 1, 7, 20) |    27 |     4 |   320.56x
+  (0, 7, 7, 20) |    22 |     3 |   304.73x
+  (0, 9, 9, 20) |    23 |     3 |   291.76x
+  (0, 6, 7, 20) |    31 |     4 |   279.85x
+  (0, 0, 8, 20) |    24 |     3 |   279.85x
+  (0, 4, 8, 20) |    34 |     4 |   255.52x
+  (0, 3, 4, 20) |    35 |     4 |   248.32x
+  (0, 5, 7, 20) |    28 |     3 |   240.58x
+  ... (14 total, showing 10)
+
+----------------------------------------------
+Batch 2/3
+Model: REAL | candidates=10648
+  score(mean/median/max)=0.531/0.600/0.700
+  leakage(mean/median/min)=0.734/1.000/0.000
+  entropy(mean/median/max)=2.161/2.242/3.000
+  dom_count(median)=0.0
+  entropy effect (stable-overall)=+0.140 bits  CI95=(0.04545017145932793, 0.2293641196086243)
+
+Top signature families (REAL, SigAbs):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (1, 10, 10, 0) |     5 |     5 |  2178.76x
+  (1, 17, 18, 3) |     4 |     4 |  2178.76x
+  (1, 14, 14, 3) |     3 |     3 |  2178.76x
+  (1, 12, 12, 0) |     3 |     3 |  2178.76x
+  (1, 14, 14, 1) |     3 |     3 |  2178.76x
+  (1, 19, 20, 4) |     4 |     4 |  2178.76x
+  (1, 15, 16, 2) |     4 |     4 |  2178.76x
+  (0, 29, 29, 20) |   147 |     4 |    66.47x
+  (0, 18, 18, 20) |   284 |     8 |    65.09x
+  (0, 26, 26, 20) |   355 |     7 |    45.97x
+  ... (15 total, showing 10)
+
+Top signature families (REAL, SigQ):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (1, 0, 0, 0) |    13 |    13 |  3244.87x
+  (1, 1, 1, 4) |     3 |     3 |  3244.87x
+  (1, 0, 0, 3) |     3 |     3 |  3244.87x
+  (1, 0, 0, 1) |     4 |     4 |  3244.87x
+  (1, 1, 1, 2) |     7 |     7 |  3244.87x
+  (1, 2, 2, 3) |     7 |     7 |  3244.87x
+  (1, 1, 1, 1) |     3 |     3 |  3244.87x
+  (1, 1, 1, 3) |     3 |     3 |  3244.87x
+  (1, 3, 3, 4) |     4 |     4 |  3244.87x
+  (1, 0, 0, 4) |     3 |     3 |  3244.87x
+  ... (17 total, showing 10)
+
+Model: NULL_HAAR_BASIS | candidates=10643
+  score(mean/median/max)=0.470/0.450/0.628
+  leakage(mean/median/min)=0.618/0.632/0.047
+  entropy(mean/median/max)=2.452/2.486/2.984
+  dom_count(median)=1.0
+  entropy effect (stable-overall)=+0.013 bits  CI95=(-0.025328763055405868, 0.04852361474787595)
+
+Top signature families (NULL, SigAbs):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (0, 23, 28, 20) |    17 |     4 |   401.69x
+  (0, 25, 26, 20) |    80 |    13 |   261.97x
+  (0, 21, 23, 20) |    22 |     3 |   243.00x
+  (0, 24, 26, 20) |    78 |     9 |   189.05x
+  (0, 22, 26, 20) |    33 |     3 |   163.21x
+  (0, 26, 26, 20) |    45 |     4 |   154.49x
+  (0, 25, 25, 20) |    58 |     5 |   146.87x
+  (0, 26, 27, 20) |    49 |     4 |   142.01x
+  (0, 25, 27, 20) |    64 |     5 |   133.20x
+  (0, 23, 24, 20) |    54 |     3 |   100.32x
+
+Top signature families (NULL, SigQ):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (0, 7, 7, 20) |    15 |     3 |   434.37x
+  (0, 0, 2, 20) |    25 |     4 |   339.47x
+  (0, 6, 9, 20) |    32 |     5 |   325.54x
+  (0, 6, 7, 20) |    27 |     4 |   314.78x
+  (0, 0, 1, 20) |    24 |     3 |   274.81x
+  (0, 1, 9, 20) |    31 |     4 |   274.81x
+  (0, 3, 9, 20) |    31 |     4 |   274.81x
+  (0, 6, 8, 20) |    32 |     4 |   266.35x
+  (0, 5, 7, 20) |    33 |     4 |   258.40x
+  (0, 0, 8, 20) |    26 |     3 |   254.07x
+  ... (17 total, showing 10)
+
+----------------------------------------------
+Batch 3/3
+Model: REAL | candidates=10802
+  score(mean/median/max)=0.532/0.600/0.697
+  leakage(mean/median/min)=0.727/1.000/0.000
+  entropy(mean/median/max)=2.132/2.210/3.000
+  dom_count(median)=0.0
+  entropy effect (stable-overall)=+0.073 bits  CI95=(0.002562533889231097, 0.13342555368554598)
+
+Top signature families (REAL, SigAbs):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (1, 14, 14, 1) |     4 |     4 |  2203.74x
+  (1, 19, 20, 4) |     4 |     4 |  2203.74x
+  (1, 10, 10, 0) |     4 |     4 |  2203.74x
+  (1, 16, 16, 4) |     3 |     3 |  2203.74x
+  (1, 13, 13, 1) |     7 |     7 |  2203.74x
+  (1, 15, 15, 2) |     3 |     3 |  2203.74x
+  (1, 18, 18, 3) |     6 |     6 |  2203.74x
+  (1, 16, 16, 2) |     3 |     3 |  2203.74x
+  (1, 16, 16, 3) |     5 |     5 |  2203.74x
+  (0, 23, 23, 20) |   449 |    10 |    51.48x
+  ... (14 total, showing 10)
+
+Top signature families (REAL, SigQ):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (1, 0, 0, 3) |     4 |     4 |  3229.64x
+  (1, 0, 0, 1) |     7 |     7 |  3229.64x
+  (1, 1, 1, 2) |     7 |     7 |  3229.64x
+  (1, 0, 0, 0) |     8 |     8 |  3229.64x
+  (1, 2, 4, 4) |     4 |     4 |  3229.64x
+  (1, 3, 3, 4) |     4 |     4 |  3229.64x
+  (1, 1, 1, 4) |     6 |     6 |  3229.64x
+  (1, 0, 0, 4) |     5 |     5 |  3229.64x
+  (1, 0, 1, 1) |     5 |     5 |  3229.64x
+  (1, 2, 2, 4) |     5 |     5 |  3229.64x
+  ... (18 total, showing 10)
+
+Model: NULL_HAAR_BASIS | candidates=10743
+  score(mean/median/max)=0.470/0.450/0.645
+  leakage(mean/median/min)=0.619/0.634/0.058
+  entropy(mean/median/max)=2.453/2.486/2.982
+  dom_count(median)=1.0
+  entropy effect (stable-overall)=-0.033 bits  CI95=(-0.06831311225407176, -0.005002492820782134)
+
+Top signature families (NULL, SigAbs):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (0, 20, 25, 20) |    15 |     3 |   358.20x
+  (0, 21, 27, 20) |    18 |     3 |   300.11x
+  (0, 27, 28, 20) |    19 |     3 |   284.72x
+  (0, 23, 24, 20) |    66 |     9 |   226.62x
+  (0, 25, 28, 20) |    26 |     3 |   209.51x
+  (0, 26, 26, 20) |    45 |     5 |   191.75x
+  (0, 24, 24, 20) |    38 |     4 |   185.41x
+  (0, 22, 24, 20) |    44 |     4 |   160.41x
+  (0, 23, 27, 20) |    35 |     3 |   156.40x
+  (0, 25, 26, 20) |    83 |     7 |   142.48x
+  ... (16 total, showing 10)
+
+Top signature families (NULL, SigQ):
+Format: sig=(dom, e1, e2, leak_bin) | overall | stable | enrichment
+  (0, 2, 4, 20) |    32 |     6 |   391.08x
+  (0, 0, 6, 20) |    24 |     4 |   359.16x
+  (0, 3, 9, 20) |    33 |     5 |   321.04x
+  (0, 3, 4, 20) |    21 |     3 |   318.32x
+  (0, 6, 8, 20) |    36 |     5 |   294.65x
+  (0, 6, 9, 20) |    40 |     5 |   265.55x
+  (0, 2, 6, 20) |    36 |     4 |   241.08x
+  (0, 2, 5, 20) |    28 |     3 |   240.14x
+  (0, 5, 7, 20) |    30 |     3 |   224.39x
+  (0, 3, 7, 20) |    30 |     3 |   224.39x
+  ... (12 total, showing 10)
+
+----------------------------------------------
+=== Cross-model calibration (REAL vs NULL) ===
+Key mode: SigQ (SigQ is recommended for cross-model family overlap)
+Interpretation: treat ratios > 1 as REAL being more enriched than NULL under matched settings.
+
+Batch 1: Jaccard(Top-25) REAL vs NULL = 0.031
+Batch 2: Jaccard(Top-25) REAL vs NULL = 0.030
+Batch 3: Jaccard(Top-25) REAL vs NULL = 0.000
+
+REAL batch overlap: Jaccard(topK) batch1 vs batch2 = 0.500
+REAL batch overlap: Jaccard(topK) batch1 vs batch3 = 0.480
+REAL batch overlap: Jaccard(topK) batch2 vs batch3 = 0.667
+
+Distribution-level effect (entropy, bits): median(stable) - median(overall)
+  REAL: mean=+0.025  across 3 batches
+  NULL: mean=-0.003  across 3 batches
+  REAL-NULL (batch means): +0.029
+
+=== End of v10 ===
