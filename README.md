@@ -48,7 +48,7 @@ This reduces two common pitfalls:
   v0.7 contains open-system retention runs and provenance artifacts.
 
 - `documentation/`
-  Draft manuscripts(OpenSystem_Retention_2D_Subspace_REAL_vs_NULL.pdf) and supplementary materials.
+  Draft manuscripts(**OpenSystem_Retention_2D_Subspace_REAL_vs_NULL.pdf**) and supplementary materials.
 
 ---
 
