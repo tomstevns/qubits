@@ -1,37 +1,72 @@
 # AI-Driven Discovery of Physics-Native Quantum Information Units
 
-This repository contains the accompanying material for the ongoing whitepaper series:
+This repository contains code, logs, and manuscript material for the ongoing whitepaper / preprint series:
 
-AI-Driven Discovery of Physics-Native Quantum Information Units
+**AI-Driven Discovery of Physics-Native Quantum Information Units**
+
+**Status:** up to **v0.7** (Jan 2026)  
+**Author:** Tom Stevns
+
+---
+
+## Motivation
+
+This project explores whether **information-preserving structures** (e.g., logical 2D subspaces) can emerge *naturally* from the symmetry, degeneracy, and low-energy structure of physical Hamiltonians—rather than being purely engineered abstractions.
+
+A central hypothesis is that large physical-to-logical overheads in error correction may partly reflect a **mismatch between human-designed encodings** and the **information structures the underlying physics naturally supports**.
+
+The work is designed as a modular, reproducible exploration of that hypothesis, with emphasis on:
+- **matched controls** (REAL vs spectrum-matched NULL),
+- **leakage-aware evaluation** (avoid “coherent-but-leaky” false positives),
+- **audit-ready provenance** (run registry, command registry, logs).
+
+---
+
+## What’s new in v0.7
+
+v0.7 focuses on **open-system retention** and “loophole-resistant” benchmarking:
+
+- **Open-system dynamics (Lindblad/GKLS)** with configurable noise models (e.g., dephasing, amplitude damping).
+- **Matched-control baselines:** REAL is evaluated against a **spectrum-matched NULL** to reduce confounders.
+- **Joint metrics (reported together):**
+  - `F_uncond(t)` unconditional retention (primary KPI),
+  - `F_cond(t)`   conditional retention (diagnostic KPI),
+  - `L(t)`        leakage / out-of-subspace probability (failure-channel KPI).
+- **Probe coverage:** canonical probe sets (e.g., ZX) are treated as diagnostic; headline results use **manifold coverage sampling** (e.g., `rand64`) to reduce direction-dependent blind spots.
+- **Replicated evidence criteria:** effects are reported across batches under an explicit decision rule (e.g., sign agreement ≥ 2/3 and a practical effect floor).
+
+This reduces two common pitfalls:
+1) “coherent-but-leaky” false positives,
+2) probe-set blind spots.
+
+---
+
+## Repository structure
+
+- `experiments/`  
+  Versioned, reproducible experiment units (code + outputs + logs + reports).  
+  v0.7 contains open-system retention runs and provenance artifacts.
+
+- `manuscripts/` (if present)  
+  Draft manuscripts and supplementary materials.
+
+---
+
+## How to run (local)
+
+Typical requirements:
+- Python 3.10+
+- `numpy`, `scipy`
+- optional: `qiskit`, `qiskit-aer` (experiment-dependent)
+
+Example:
+```bash
+cd experiments/v0_7
+python -X utf8 -u v0_7_convergence_families_v23.py --help
+
 Repository/Experiment Status: up to v0.6.1 (December 2025)
 Author: Tom Stevns
 
-# Motivation
-
-This work explores whether quantum information units beyond engineered qubits may naturally emerge from the symmetry, degeneracy, and low-energy structure of physical Hamiltonians — and whether modern computational tools (classical and AI-assisted) can help identify and validate such physics-native subspaces.
-
-Recent progress in error-correction codes and decoding algorithms suggests that large physical-to-logical qubit overheads may reflect not a limitation of physics itself, but a mismatch between human-designed abstractions and the information structures the underlying physics naturally supports.
-
-The project is designed as a modular, reproducible exploration of that hypothesis.
-
-Conceptual Pipeline (Long-Term Architecture)
-
-The whitepaper proposes an AI-assisted pipeline with five major components:
-
-Hamiltonian Library
-A curated set of model Hamiltonians (synthetic and physically motivated), defining the search space for candidate information-preserving structures.
-
-AI Discovery Engine
-Methods intended to identify stable subspaces, symmetries, conserved quantities, and low-noise regions in Hilbert space.
-
-Dynamics Simulator
-Time-evolution and decoherence simulations used to test candidate subspaces under realistic noise models.
-
-Stability Scoring
-Quantitative evaluation of how well a candidate subspace preserves information relative to engineered encodings.
-
-Realization Filter
-A mapping layer checking which candidates could plausibly be realized on contemporary physical platforms (superconducting, trapped-ion, photonic, cold atoms, etc.).
 
 Important: v0.3–v0.6.1 focus on building and validating the early “discovery + scoring” components in small, controlled prototypes.
 
