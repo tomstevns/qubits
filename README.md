@@ -46,7 +46,7 @@ This reduces two common pitfalls:
   Versioned, reproducible experiment units (code + outputs + logs + reports).
 
 - `documentation/`  
-  Draft manuscripts and supplementary materials (e.g., **OpenSystem_Retention_2D_Subspace_REAL_vs_NULL.pdf**).
+  **Draft manuscript** and supplementary materials (e.g., **OpenSystem_Retention_2D_Subspace_REAL_vs_NULL.pdf**).
 
 Additional supporting documents may also appear at repo root (executive summaries, “need-to-know” notes, appendices).
 
