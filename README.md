@@ -47,8 +47,8 @@ This reduces two common pitfalls:
   Versioned, reproducible experiment units (code + outputs + logs + reports).  
   v0.7 contains open-system retention runs and provenance artifacts.
 
-- `manuscripts/` (if present)  
-  Draft manuscripts and supplementary materials.
+- `documentation/`
+  Draft manuscripts(OpenSystem_Retention_2D_Subspace_REAL_vs_NULL.pdf) and supplementary materials.
 
 ---
 
