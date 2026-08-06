@@ -45,7 +45,12 @@ This reduces two common pitfalls:
 - `experiments/`  
   Versioned, reproducible experiment units (code + outputs + logs + reports).
 
-- `documentation/`  
+- `documentation/`
+
+- Update:
+The paper is now archived on Zenodo and has been assigned a permanent DOI:
+
+https://doi.org/10.5281/zenodo.21819815
   **Draft manuscript** and supplementary materials (e.g., **OpenSystem_Retention_2D_Subspace_REAL_vs_NULL.pdf**).
 
 Additional supporting documents may also appear at repo root (executive summaries, “need-to-know” notes, appendices).
