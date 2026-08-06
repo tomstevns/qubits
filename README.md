@@ -1,5 +1,50 @@
 # AI-Driven Discovery of Physics-Native Quantum Information Units
 
+# Soft Spaces
+
+## Exploring Hidden Structures in Low-Qubit Hilbert Spaces
+
+This repository accompanies the **Phase 1** publication of the *Soft Spaces* project.
+
+The work investigates whether hidden structures can be identified in low-qubit Hilbert spaces through software-based analysis of open quantum systems.
+
+The study focuses on:
+
+- REAL–NULL subspace separation
+- Dynamical subspace stability
+- Lindblad-based evolution
+- Statistical reproducibility across repeated simulations
+
+## Publication
+
+The official archived publication is available on Zenodo:
+
+**DOI:** https://doi.org/10.5281/zenodo.21819815
+
+## Repository contents
+
+- Research paper (PDF)
+- Supporting documentation
+- Project material
+
+## Status
+
+**Phase 1 completed**
+
+Future work will investigate:
+
+- Scaling to larger Hilbert spaces (9–12 qubits)
+- Comparison with quantum-computing implementations (Qiskit)
+- Further characterization of Soft Spaces
+
+---
+
+Author: **Tom Stevns**
+
+ORCID: https://orcid.org/0009-0000-5306-7776
+
+
+
 This repository contains code, logs, and manuscript material for the ongoing whitepaper / preprint series:
 
 **AI-Driven Discovery of Physics-Native Quantum Information Units**  
@@ -47,12 +92,6 @@ This reduces two common pitfalls:
 
 - `documentation/`
 
-- Update:
-The paper is now archived on Zenodo and has been assigned a permanent DOI:
 
-https://doi.org/10.5281/zenodo.21819815
-  **Draft manuscript** and supplementary materials (e.g., **OpenSystem_Retention_2D_Subspace_REAL_vs_NULL.pdf**).
-
-Additional supporting documents may also appear at repo root (executive summaries, “need-to-know” notes, appendices).
 
 ---
